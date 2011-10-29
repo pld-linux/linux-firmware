@@ -1,14 +1,12 @@
 Summary:	Firmware files used by the Linux kernel
 Name:		linux-firmware
 Version:	20110705
-Release:	2
+Release:	3
 License:	GPL+ and GPLv2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 URL:		http://www.kernel.org/
 Source0:	ftp://ftp.kernel.org/pub/linux/kernel/people/dwmw2/firmware/%{name}-%{version}.tar.bz2
 # Source0-md5:	404fa9eb047a932138a5eaeeac30c4cc
-Requires:	udev-core
-Provides:	kernel-firmware = %{version}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
