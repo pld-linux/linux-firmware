@@ -6,7 +6,7 @@ License:	GPL+ and GPLv2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 URL:		http://www.kernel.org/
 Source0:	ftp://ftp.kernel.org/pub/linux/kernel/people/dwmw2/firmware/%{name}-%{version}.tar.gz
-# Source0-md5:	404fa9eb047a932138a5eaeeac30c4cc
+# Source0-md5:	7652141968b9c53af4d38317a85f88b8
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
