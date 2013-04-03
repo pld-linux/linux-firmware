@@ -42,6 +42,8 @@ rmdir linux-firmware-*
 %{__rm} v4l-cx23418-apu.fw v4l-cx23418-cpu.fw v4l-cx23418-dig.fw v4l-cx25840.fw
 # Netxen firmware (which package???)
 %{__rm} phanfw.bin LICENCE.phanfw
+# - radeon-ucode.spec
+%{__rm} radeon/{ARUBA,BTC,CAYMAN,CEDAR,CYPRESS,JUNIPER,PITCAIRN,R700,REDWOOD,SUMO,TAHITI,VERDE}_rlc.bin
 
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
