@@ -1,12 +1,15 @@
+# TODO
+# - subpackages for various firmwares?
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20130201
+Version:	20131001
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	ftp://ftp.kernel.org/pub/linux/kernel/people/dwmw2/firmware/%{name}-%{version}.tar.gz
-# Source0-md5:	f2df7fead9142d076338700b70ec277b
+#Source0:	ftp://ftp.kernel.org/pub/linux/kernel/people/dwmw2/firmware/%{name}-%{version}.tar.gz
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/c5f6cfa12bc1bb6bc17f8d28ae0a7467/%{name}-%{version}.tar.gz
+# Source0-md5:	c5f6cfa12bc1bb6bc17f8d28ae0a7467
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -68,6 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
+/lib/firmware/amd-ucode
 /lib/firmware/ar3k
 /lib/firmware/ar5523.bin
 /lib/firmware/ar7010*.fw
@@ -83,8 +87,13 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/bnx2x-e1h-*.fw
 /lib/firmware/brcm
 /lib/firmware/carl9170-1.fw
+/lib/firmware/cbfw-*.bin
 /lib/firmware/cis
 /lib/firmware/cpia2
+/lib/firmware/ct2fw-*.bin
+/lib/firmware/ctefx.bin
+/lib/firmware/ctfw-*.bin
+/lib/firmware/ctspeq.bin
 /lib/firmware/cxgb3
 /lib/firmware/cxgb4
 /lib/firmware/dabusb
@@ -98,10 +107,12 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/emi62
 /lib/firmware/ene-ub6250
 /lib/firmware/f2255usb.bin
+/lib/firmware/go7007
 /lib/firmware/htc_7010.fw
 /lib/firmware/htc_9271.fw
 /lib/firmware/i2400m-fw-usb-*.sbcf
 /lib/firmware/i6050-fw-usb-*.sbcf
+/lib/firmware/intel
 /lib/firmware/intelliport2.bin
 /lib/firmware/isci
 /lib/firmware/iwlwifi-100-5.ucode
@@ -109,8 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-135-6.ucode
 /lib/firmware/iwlwifi-2000-6.ucode
 /lib/firmware/iwlwifi-2030-6.ucode
+/lib/firmware/iwlwifi-3160-7.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
+/lib/firmware/iwlwifi-7260-7.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -118,7 +131,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/lgs8g75.fw
 /lib/firmware/libertas
 /lib/firmware/matrox
+/lib/firmware/moxa
 /lib/firmware/mrvl
+/lib/firmware/mt7650.bin
 /lib/firmware/mts_*.fw
 /lib/firmware/mwl8k
 /lib/firmware/myri10ge_*.dat
@@ -127,6 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/radeon
+/lib/firmware/rp2.fw
 /lib/firmware/rt2860.bin
 /lib/firmware/rt2870.bin
 /lib/firmware/rt3070.bin
@@ -137,6 +153,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtlwifi
 /lib/firmware/s2250*.fw
 /lib/firmware/s5p-mfc
+/lib/firmware/sdd_sagrad_*.bin
 /lib/firmware/slicoss
 /lib/firmware/sun
 /lib/firmware/sxg
