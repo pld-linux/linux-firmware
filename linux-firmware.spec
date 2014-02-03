@@ -3,13 +3,13 @@
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20131001
+Version:	20140131
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 #Source0:	ftp://ftp.kernel.org/pub/linux/kernel/people/dwmw2/firmware/%{name}-%{version}.tar.gz
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/c5f6cfa12bc1bb6bc17f8d28ae0a7467/%{name}-%{version}.tar.gz
-# Source0-md5:	c5f6cfa12bc1bb6bc17f8d28ae0a7467
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/7bfb29f6099203ef496d2ad86bf36729/%{name}-%{version}.tar.gz
+# Source0-md5:	7bfb29f6099203ef496d2ad86bf36729
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -121,9 +121,11 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-2000-6.ucode
 /lib/firmware/iwlwifi-2030-6.ucode
 /lib/firmware/iwlwifi-3160-7.ucode
+/lib/firmware/iwlwifi-3160-8.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
 /lib/firmware/iwlwifi-7260-7.ucode
+/lib/firmware/iwlwifi-7260-8.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -172,4 +174,5 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/vntwusb.fw
 /lib/firmware/vxge
 /lib/firmware/whiteheat*.fw
+/lib/firmware/wsm_22.bin
 /lib/firmware/yam
