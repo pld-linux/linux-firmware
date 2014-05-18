@@ -3,13 +3,12 @@
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20140131
+Version:	20140317
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-#Source0:	ftp://ftp.kernel.org/pub/linux/kernel/people/dwmw2/firmware/%{name}-%{version}.tar.gz
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/7bfb29f6099203ef496d2ad86bf36729/%{name}-%{version}.tar.gz
-# Source0-md5:	7bfb29f6099203ef496d2ad86bf36729
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/8d819913b5e296fc59f6b83bf18e6d81/%{name}-%{version}.tar.gz
+# Source0-md5:	8d819913b5e296fc59f6b83bf18e6d81
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
