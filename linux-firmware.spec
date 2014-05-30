@@ -4,7 +4,7 @@ Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
 Version:	20140317
-Release:	1
+Release:	2
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/8d819913b5e296fc59f6b83bf18e6d81/%{name}-%{version}.tar.gz
@@ -31,8 +31,8 @@ rmdir linux-firmware-*
 # Perhaps these should be built as subpackages of linux-firmware?
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
 %{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENCE.qla2xxx
-# - iwlwifi-{1000,3945,4965,5000,5150,6000,6030}-ucode.spec
-%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6}.ucode
+# - iwlwifi-{1000,3945,4965,5000,5150,6000,6030,7260}-ucode.spec
+%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8}}.ucode
 # (note: LICENCE.iwlwifi_firmware left for remaining iwlwifi files)
 # - obsolete versions of iwlwifi firmwares
 %{__rm} iwlwifi-{1000-3,6000g2a-5,6000g2b-5,6050-4}.ucode
@@ -123,8 +123,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-3160-8.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
-/lib/firmware/iwlwifi-7260-7.ucode
-/lib/firmware/iwlwifi-7260-8.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
