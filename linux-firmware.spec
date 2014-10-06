@@ -3,12 +3,12 @@
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20140605
+Version:	20140912
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/4d06c34d0b8fbbed43b96461bf8ca732/%{name}-%{version}.tar.gz
-# Source0-md5:	4d06c34d0b8fbbed43b96461bf8ca732
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/540773f0415d116724be844787331847/%{name}-%{version}.tar.gz
+# Source0-md5:	540773f0415d116724be844787331847
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -76,6 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ar7010*.fw
 /lib/firmware/ar9170-*.fw
 /lib/firmware/ar9271.fw
+/lib/firmware/as102_data1_st.hex
+/lib/firmware/as102_data2_st.hex
 /lib/firmware/ath3k-1.fw
 /lib/firmware/ath6k
 /lib/firmware/atmsar11.fw
@@ -97,8 +99,12 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/cxgb4
 /lib/firmware/dabusb
 /lib/firmware/dsp56k
+/lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000-*.fw
+/lib/firmware/dvb-fe-xc5000c-*.fw
 /lib/firmware/dvb-usb-dib0700-*.fw
+/lib/firmware/dvb-usb-it9135-01.fw
+/lib/firmware/dvb-usb-it9135-02.fw
 /lib/firmware/dvb-usb-terratec-h5-drxk.fw
 /lib/firmware/e100
 /lib/firmware/edgeport
@@ -144,6 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_895xcc.bin
 /lib/firmware/qlogic
 /lib/firmware/r128
+/lib/firmware/r8a779x_usb3_v1.dlmem
 /lib/firmware/radeon
 /lib/firmware/rp2.fw
 /lib/firmware/rsi_91x.fw
@@ -156,7 +163,11 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
 /lib/firmware/s2250*.fw
-/lib/firmware/s5p-mfc
+/lib/firmware/s5p-mfc-v6-v2.fw
+/lib/firmware/s5p-mfc-v6.fw
+/lib/firmware/s5p-mfc-v7.fw
+/lib/firmware/s5p-mfc-v8.fw
+/lib/firmware/s5p-mfc.fw
 /lib/firmware/sdd_sagrad_*.bin
 /lib/firmware/slicoss
 /lib/firmware/sun
