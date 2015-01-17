@@ -3,12 +3,12 @@
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20140912
+Version:	20150115
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/540773f0415d116724be844787331847/%{name}-%{version}.tar.gz
-# Source0-md5:	540773f0415d116724be844787331847
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/dbf64c7fa8c246e0f41b76aec3e62ee6/%{name}-%{version}.tar.gz
+# Source0-md5:	dbf64c7fa8c246e0f41b76aec3e62ee6
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -90,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/carl9170-1.fw
 /lib/firmware/cbfw-*.bin
 /lib/firmware/cis
+/lib/firmware/cmmb_*_12mhz.inp
 /lib/firmware/cpia2
 /lib/firmware/ct2fw-*.bin
 /lib/firmware/ctefx.bin
@@ -106,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/dvb-usb-it9135-01.fw
 /lib/firmware/dvb-usb-it9135-02.fw
 /lib/firmware/dvb-usb-terratec-h5-drxk.fw
+/lib/firmware/dvb_nova_12mhz*.inp
 /lib/firmware/e100
 /lib/firmware/edgeport
 /lib/firmware/emi26
@@ -119,6 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/i6050-fw-usb-*.sbcf
 /lib/firmware/intel
 /lib/firmware/intelliport2.bin
+/lib/firmware/isdbt_*.inp
 /lib/firmware/isci
 /lib/firmware/iwlwifi-100-5.ucode
 /lib/firmware/iwlwifi-105-6.ucode
@@ -128,10 +131,14 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-3160-7.ucode
 /lib/firmware/iwlwifi-3160-8.ucode
 /lib/firmware/iwlwifi-3160-9.ucode
+/lib/firmware/iwlwifi-3160-10.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
+/lib/firmware/iwlwifi-7260-10.ucode
 /lib/firmware/iwlwifi-7265-8.ucode
 /lib/firmware/iwlwifi-7265-9.ucode
+/lib/firmware/iwlwifi-7265-10.ucode
+/lib/firmware/iwlwifi-7265D-10.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -170,8 +177,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/s5p-mfc.fw
 /lib/firmware/sdd_sagrad_*.bin
 /lib/firmware/slicoss
+/lib/firmware/sms1xxx-*.fw
 /lib/firmware/sun
 /lib/firmware/sxg
+/lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
 /lib/firmware/ti-connectivity
 /lib/firmware/ti_3410.fw
