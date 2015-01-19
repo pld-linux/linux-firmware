@@ -4,7 +4,7 @@ Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
 Version:	20150115
-Release:	1
+Release:	2
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/dbf64c7fa8c246e0f41b76aec3e62ee6/%{name}-%{version}.tar.gz
@@ -46,6 +46,7 @@ rmdir linux-firmware-*
 %{__rm} phanfw.bin LICENCE.phanfw
 # - radeon-ucode.spec
 %{__rm} radeon/{ARUBA,BTC,CAYMAN,CEDAR,CYPRESS,JUNIPER,PITCAIRN,R700,REDWOOD,SUMO,TAHITI,VERDE}_rlc.bin
+%{__rm} radeon/kaveri*.bin
 
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
