@@ -45,8 +45,14 @@ rmdir linux-firmware-*
 # Netxen firmware (which package???)
 %{__rm} phanfw.bin LICENCE.phanfw
 # - radeon-ucode.spec
-%{__rm} radeon/{ARUBA,BTC,CAYMAN,CEDAR,CYPRESS,JUNIPER,PITCAIRN,R700,REDWOOD,SUMO,TAHITI,VERDE}_rlc.bin
-%{__rm} radeon/kaveri*.bin
+%{__rm} radeon/{ARUBA,BARTS,BONAIRE,BTC,CAICOS,CAYMAN,CEDAR,CYPRESS,HAINAN,HAWAII,JUNIPER,KABINI,KAVERI,MULLINS,OLAND,PALM,PITCAIRN,R700,REDWOOD,SUMO,SUMO2,TAHITI,TURKS,VERDE,bonaire,hainan,hawaii,kabini,kaveri,mullins,oland,pitcairn,tahiti,verde}_*.bin
+# R{100,200,300,420,520}_cp.bin, R600_{me,pfp}.bin, RS{600,690}_cp.bin, RS780_{me,pfp}.bin, RV610_{me,pfp}.bin RV620_{me,pfp}.bin, RV630_{me,pfp}.bin, RV635_{me,pfp}.bin, RV710-{me,pfp}.bin, RV730_{me,pfp}.bin RV770_{me,pfp}.bin are missing in radeon_ucode
+%{__rm} radeon/R600_{rlc,uvd}.bin
+%{__rm} radeon/RS780_uvd.bin
+%{__rm} radeon/RV710_{smc,uvd}.bin
+%{__rm} radeon/RV730_smc.bin
+%{__rm} radeon/RV740_smc.bin
+%{__rm} radeon/RV770_{smc,uvd}.bin
 
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
