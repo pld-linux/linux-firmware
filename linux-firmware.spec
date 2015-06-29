@@ -1,14 +1,15 @@
 # TODO
 # - subpackages for various firmwares?
+# - build microcode-data-amd from this spec?
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20150115
-Release:	3
+Version:	20150521
+Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/dbf64c7fa8c246e0f41b76aec3e62ee6/%{name}-%{version}.tar.gz
-# Source0-md5:	dbf64c7fa8c246e0f41b76aec3e62ee6
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/92dc152c47e2f1dc352b047bb5b017c0/%{name}-%{version}.tar.gz
+# Source0-md5:	92dc152c47e2f1dc352b047bb5b017c0
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +41,7 @@ rmdir linux-firmware-*
 %{__rm} -r ess korg sb16 yamaha
 # We have _some_ ralink firmware in separate packages already. (which packages???)
 %{__rm} rt73.bin rt2561.bin rt2561s.bin rt2661.bin
-# And _some_ conexant firmware. (whcih packages???)
+# And _some_ conexant firmware. (which packages???)
 %{__rm} v4l-cx23418-apu.fw v4l-cx23418-cpu.fw v4l-cx23418-dig.fw v4l-cx25840.fw
 # Netxen firmware (which package???)
 %{__rm} phanfw.bin LICENCE.phanfw
@@ -53,11 +54,16 @@ rmdir linux-firmware-*
 %{__rm} radeon/RV730_smc.bin
 %{__rm} radeon/RV740_smc.bin
 %{__rm} radeon/RV770_{smc,uvd}.bin
+# - microcode-data-amd (TODO: build it from this spec?)
+%{__rm} amd-ucode/microcode_amd{,_fam15h}.bin
 
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
 %{__rm} -r carl9170fw usbdux
 %{__rm} Makefile configure
+
+# and signatures
+%{__rm} amd-ucode/*.asc
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -77,7 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
-/lib/firmware/amd-ucode
+# XXX: dir shared with microcode-data-amd
+%dir /lib/firmware/amd-ucode
+/lib/firmware/amd-ucode/microcode_amd_fam16h.bin
 /lib/firmware/ar3k
 /lib/firmware/ar5523.bin
 /lib/firmware/ar7010*.fw
@@ -87,6 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/as102_data2_st.hex
 /lib/firmware/ath3k-1.fw
 /lib/firmware/ath6k
+/lib/firmware/ath9k_htc
+/lib/firmware/ath10k
 /lib/firmware/atmsar11.fw
 /lib/firmware/av7110
 /lib/firmware/bnx2
@@ -139,12 +149,16 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-3160-8.ucode
 /lib/firmware/iwlwifi-3160-9.ucode
 /lib/firmware/iwlwifi-3160-10.ucode
+/lib/firmware/iwlwifi-3160-12.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
+/lib/firmware/iwlwifi-7260-12.ucode
 /lib/firmware/iwlwifi-7265-8.ucode
 /lib/firmware/iwlwifi-7265-9.ucode
 /lib/firmware/iwlwifi-7265-10.ucode
+/lib/firmware/iwlwifi-7265-12.ucode
 /lib/firmware/iwlwifi-7265D-10.ucode
+/lib/firmware/iwlwifi-7265D-12.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -159,6 +173,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mwl8k
 /lib/firmware/myri10ge_*.dat
 /lib/firmware/myricom
+/lib/firmware/nvidia
 /lib/firmware/ositech
 /lib/firmware/qat_895xcc.bin
 /lib/firmware/qlogic
@@ -173,6 +188,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rt3071.bin
 /lib/firmware/rt3090.bin
 /lib/firmware/rt3290.bin
+/lib/firmware/rtl_bt
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
 /lib/firmware/s2250*.fw
