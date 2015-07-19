@@ -4,12 +4,12 @@
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20150521
+Version:	20150715
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/92dc152c47e2f1dc352b047bb5b017c0/%{name}-%{version}.tar.gz
-# Source0-md5:	92dc152c47e2f1dc352b047bb5b017c0
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/5f829e860b1b9b5f6ea1a385eb368540/%{name}-%{version}.tar.gz
+# Source0-md5:	5f829e860b1b9b5f6ea1a385eb368540
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,7 +33,7 @@ rmdir linux-firmware-*
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
 %{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENCE.qla2xxx
 # - iwlwifi-{1000,3945,4965,5000,5150,6000,6030,7260}-ucode.spec
-%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8,9,10}}.ucode
+%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8,9,10,12,13}}.ucode
 # (note: LICENCE.iwlwifi_firmware left for remaining iwlwifi files)
 # - obsolete versions of iwlwifi firmwares
 %{__rm} iwlwifi-{1000-3,6000g2a-5,6000g2b-5,6050-4}.ucode
@@ -98,6 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ath9k_htc
 /lib/firmware/ath10k
 /lib/firmware/atmsar11.fw
+/lib/firmware/atusb
 /lib/firmware/av7110
 /lib/firmware/bnx2
 /lib/firmware/bnx2x
@@ -136,6 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/htc_9271.fw
 /lib/firmware/i2400m-fw-usb-*.sbcf
 /lib/firmware/i6050-fw-usb-*.sbcf
+/lib/firmware/i915
 /lib/firmware/intel
 /lib/firmware/intelliport2.bin
 /lib/firmware/isdbt_*.inp
@@ -150,21 +152,25 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-3160-9.ucode
 /lib/firmware/iwlwifi-3160-10.ucode
 /lib/firmware/iwlwifi-3160-12.ucode
+/lib/firmware/iwlwifi-3160-13.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
-/lib/firmware/iwlwifi-7260-12.ucode
 /lib/firmware/iwlwifi-7265-8.ucode
 /lib/firmware/iwlwifi-7265-9.ucode
 /lib/firmware/iwlwifi-7265-10.ucode
 /lib/firmware/iwlwifi-7265-12.ucode
+/lib/firmware/iwlwifi-7265-13.ucode
 /lib/firmware/iwlwifi-7265D-10.ucode
 /lib/firmware/iwlwifi-7265D-12.ucode
+/lib/firmware/iwlwifi-7265D-13.ucode
+/lib/firmware/iwlwifi-8000C-13.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
 /lib/firmware/lbtf_usb.bin
 /lib/firmware/lgs8g75.fw
 /lib/firmware/libertas
+/lib/firmware/liquidio
 /lib/firmware/matrox
 /lib/firmware/moxa
 /lib/firmware/mrvl
@@ -176,6 +182,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/nvidia
 /lib/firmware/ositech
 /lib/firmware/qat_895xcc.bin
+/lib/firmware/qca
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
