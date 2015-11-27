@@ -1,17 +1,17 @@
 # TODO
 # - subpackages for various firmwares?
-# - build microcode-data-amd from this spec?
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20150715
+Version:	20151030
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/5f829e860b1b9b5f6ea1a385eb368540/%{name}-%{version}.tar.gz
-# Source0-md5:	5f829e860b1b9b5f6ea1a385eb368540
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/a3ed304228118353c5b26819cef10136/%{name}-%{version}.tar.gz
+# Source0-md5:	a3ed304228118353c5b26819cef10136
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildArch:	noarch
+Obsoletes:	microcode-data-amd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,16 +54,11 @@ rmdir linux-firmware-*
 %{__rm} radeon/RV730_smc.bin
 %{__rm} radeon/RV740_smc.bin
 %{__rm} radeon/RV770_{smc,uvd}.bin
-# - microcode-data-amd (TODO: build it from this spec?)
-%{__rm} amd-ucode/microcode_amd{,_fam15h}.bin
 
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
 %{__rm} -r carl9170fw usbdux
 %{__rm} Makefile configure
-
-# and signatures
-%{__rm} amd-ucode/*.asc
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -83,9 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
-# XXX: dir shared with microcode-data-amd
-%dir /lib/firmware/amd-ucode
-/lib/firmware/amd-ucode/microcode_amd_fam16h.bin
+/lib/firmware/amdgpu
+/lib/firmware/amd-ucode
 /lib/firmware/ar3k
 /lib/firmware/ar5523.bin
 /lib/firmware/ar7010*.fw
@@ -97,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ath6k
 /lib/firmware/ath9k_htc
 /lib/firmware/ath10k
+/lib/firmware/atmel
 /lib/firmware/atmsar11.fw
 /lib/firmware/atusb
 /lib/firmware/av7110
@@ -133,6 +128,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ene-ub6250
 /lib/firmware/f2255usb.bin
 /lib/firmware/go7007
+/lib/firmware/hfi1_dc8051.fw
+/lib/firmware/hfi1_fabric.fw
+/lib/firmware/hfi1_pcie.fw
+/lib/firmware/hfi1_sbus.fw
 /lib/firmware/htc_7010.fw
 /lib/firmware/htc_9271.fw
 /lib/firmware/i2400m-fw-usb-*.sbcf
@@ -171,6 +170,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/lgs8g75.fw
 /lib/firmware/libertas
 /lib/firmware/liquidio
+/lib/firmware/mwlwifi
 /lib/firmware/matrox
 /lib/firmware/moxa
 /lib/firmware/mrvl
@@ -182,10 +182,12 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/nvidia
 /lib/firmware/ositech
 /lib/firmware/qat_895xcc.bin
+/lib/firmware/qat_mmp.bin
 /lib/firmware/qca
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
+/lib/firmware/r8a779x_usb3_v2.dlmem
 /lib/firmware/radeon
 /lib/firmware/rp2.fw
 /lib/firmware/rsi_91x.fw
@@ -212,6 +214,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
 /lib/firmware/ti-connectivity
+/lib/firmware/ti-keystone
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
 /lib/firmware/tigon
