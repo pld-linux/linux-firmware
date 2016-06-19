@@ -3,15 +3,15 @@
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
-Version:	20151030
+Version:	20160609
 Release:	1
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/a3ed304228118353c5b26819cef10136/%{name}-%{version}.tar.gz
-# Source0-md5:	a3ed304228118353c5b26819cef10136
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/2bf6ad095ebdf388a99919ca2317b4aa/linux-firmware-%{version}.tar.gz
+# Source0-md5:	2bf6ad095ebdf388a99919ca2317b4aa
 URL:		http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
-BuildArch:	noarch
 Obsoletes:	microcode-data-amd
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +33,7 @@ rmdir linux-firmware-*
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
 %{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENCE.qla2xxx
 # - iwlwifi-{1000,3945,4965,5000,5150,6000,6030,7260}-ucode.spec
-%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8,9,10,12,13}}.ucode
+%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8,9,10,12,13,16}}.ucode
 # (note: LICENCE.iwlwifi_firmware left for remaining iwlwifi files)
 # - obsolete versions of iwlwifi firmwares
 %{__rm} iwlwifi-{1000-3,6000g2a-5,6000g2b-5,6050-4}.ucode
@@ -73,7 +73,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.* LICENSE.* README TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
-/lib/firmware/RTL8192E
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
@@ -87,10 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ar9271.fw
 /lib/firmware/as102_data1_st.hex
 /lib/firmware/as102_data2_st.hex
+/lib/firmware/ath10k
 /lib/firmware/ath3k-1.fw
 /lib/firmware/ath6k
 /lib/firmware/ath9k_htc
-/lib/firmware/ath10k
 /lib/firmware/atmel
 /lib/firmware/atmsar11.fw
 /lib/firmware/atusb
@@ -114,13 +113,13 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/dabusb
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
-/lib/firmware/dvb-fe-xc5000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
+/lib/firmware/dvb-fe-xc5000-*.fw
+/lib/firmware/dvb_nova_12mhz*.inp
 /lib/firmware/dvb-usb-dib0700-*.fw
 /lib/firmware/dvb-usb-it9135-01.fw
 /lib/firmware/dvb-usb-it9135-02.fw
 /lib/firmware/dvb-usb-terratec-h5-drxk.fw
-/lib/firmware/dvb_nova_12mhz*.inp
 /lib/firmware/e100
 /lib/firmware/edgeport
 /lib/firmware/emi26
@@ -139,30 +138,38 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/i915
 /lib/firmware/intel
 /lib/firmware/intelliport2.bin
-/lib/firmware/isdbt_*.inp
 /lib/firmware/isci
+/lib/firmware/isdbt_*.inp
 /lib/firmware/iwlwifi-100-5.ucode
 /lib/firmware/iwlwifi-105-6.ucode
 /lib/firmware/iwlwifi-135-6.ucode
 /lib/firmware/iwlwifi-2000-6.ucode
 /lib/firmware/iwlwifi-2030-6.ucode
-/lib/firmware/iwlwifi-3160-7.ucode
-/lib/firmware/iwlwifi-3160-8.ucode
-/lib/firmware/iwlwifi-3160-9.ucode
 /lib/firmware/iwlwifi-3160-10.ucode
 /lib/firmware/iwlwifi-3160-12.ucode
 /lib/firmware/iwlwifi-3160-13.ucode
+/lib/firmware/iwlwifi-3160-16.ucode
+/lib/firmware/iwlwifi-3160-7.ucode
+/lib/firmware/iwlwifi-3160-8.ucode
+/lib/firmware/iwlwifi-3160-9.ucode
+/lib/firmware/iwlwifi-3168-21.ucode
 /lib/firmware/iwlwifi-6000g2a-6.ucode
 /lib/firmware/iwlwifi-6050-5.ucode
-/lib/firmware/iwlwifi-7265-8.ucode
-/lib/firmware/iwlwifi-7265-9.ucode
 /lib/firmware/iwlwifi-7265-10.ucode
 /lib/firmware/iwlwifi-7265-12.ucode
 /lib/firmware/iwlwifi-7265-13.ucode
+/lib/firmware/iwlwifi-7265-16.ucode
+/lib/firmware/iwlwifi-7265-8.ucode
+/lib/firmware/iwlwifi-7265-9.ucode
 /lib/firmware/iwlwifi-7265D-10.ucode
 /lib/firmware/iwlwifi-7265D-12.ucode
 /lib/firmware/iwlwifi-7265D-13.ucode
+/lib/firmware/iwlwifi-7265D-16.ucode
+/lib/firmware/iwlwifi-7265D-21.ucode
 /lib/firmware/iwlwifi-8000C-13.ucode
+/lib/firmware/iwlwifi-8000C-16.ucode
+/lib/firmware/iwlwifi-8000C-21.ucode
+/lib/firmware/iwlwifi-8265-21.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -170,24 +177,34 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/lgs8g75.fw
 /lib/firmware/libertas
 /lib/firmware/liquidio
-/lib/firmware/mwlwifi
 /lib/firmware/matrox
 /lib/firmware/moxa
 /lib/firmware/mrvl
+/lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mts_*.fw
 /lib/firmware/mwl8k
+/lib/firmware/mwlwifi
 /lib/firmware/myri10ge_*.dat
 /lib/firmware/myricom
 /lib/firmware/nvidia
 /lib/firmware/ositech
 /lib/firmware/qat_895xcc.bin
+/lib/firmware/qat_895xcc_mmp.bin
+/lib/firmware/qat_c3xxx.bin
+/lib/firmware/qat_c3xxx_mmp.bin
+/lib/firmware/qat_c62x.bin
+/lib/firmware/qat_c62x_mmp.bin
 /lib/firmware/qat_mmp.bin
 /lib/firmware/qca
+/lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
 /lib/firmware/r8a779x_usb3_v2.dlmem
+/lib/firmware/r8a779x_usb3_v3.dlmem
 /lib/firmware/radeon
 /lib/firmware/rp2.fw
 /lib/firmware/rsi_91x.fw
@@ -197,15 +214,16 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rt3071.bin
 /lib/firmware/rt3090.bin
 /lib/firmware/rt3290.bin
+/lib/firmware/RTL8192E
 /lib/firmware/rtl_bt
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
 /lib/firmware/s2250*.fw
-/lib/firmware/s5p-mfc-v6-v2.fw
+/lib/firmware/s5p-mfc.fw
 /lib/firmware/s5p-mfc-v6.fw
+/lib/firmware/s5p-mfc-v6-v2.fw
 /lib/firmware/s5p-mfc-v7.fw
 /lib/firmware/s5p-mfc-v8.fw
-/lib/firmware/s5p-mfc.fw
 /lib/firmware/sdd_sagrad_*.bin
 /lib/firmware/slicoss
 /lib/firmware/sms1xxx-*.fw
@@ -213,11 +231,11 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/sxg
 /lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
-/lib/firmware/ti-connectivity
-/lib/firmware/ti-keystone
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
+/lib/firmware/ti-connectivity
 /lib/firmware/tigon
+/lib/firmware/ti-keystone
 /lib/firmware/tlg2300_firmware.bin
 /lib/firmware/tr_smctr.bin
 /lib/firmware/ttusb-budget
