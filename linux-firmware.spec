@@ -4,7 +4,7 @@ Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
 Version:	20160609
-Release:	1
+Release:	2
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/2bf6ad095ebdf388a99919ca2317b4aa/linux-firmware-%{version}.tar.gz
@@ -196,6 +196,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_c62x_mmp.bin
 /lib/firmware/qat_mmp.bin
 /lib/firmware/qca
+%dir /lib/firmware/qed
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
