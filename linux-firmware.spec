@@ -27,7 +27,6 @@ urządzeń.
 mv linux-firmware-*/* .
 rmdir linux-firmware-*
 
-%build
 # Remove firmware shipped in separate packages already
 # Perhaps these should be built as subpackages of linux-firmware?
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
