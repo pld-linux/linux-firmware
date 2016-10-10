@@ -271,7 +271,8 @@ rmdir linux-firmware-*
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
 %{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENCE.qla2xxx
 # - iwlwifi-{1000,3945,4965,5000,5150,6000,6030,7260}-ucode.spec
-%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8,9,10,12,13,16}}.ucode
+%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6,7260-{7,8,9,10,12,13,16,17}}.ucode
+
 # (note: LICENCE.iwlwifi_firmware left for remaining iwlwifi files)
 # - obsolete versions of iwlwifi firmwares
 %{__rm} iwlwifi-{1000-3,6000g2a-5,6000g2b-5,6050-4}.ucode
@@ -548,7 +549,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -n iwl7260-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
-#/lib/firmware/iwlwifi-7260-*.ucode
 /lib/firmware/iwlwifi-7265-*.ucode
 /lib/firmware/iwlwifi-7265D-*.ucode
 /lib/firmware/iwlwifi-8000C-*.ucode
