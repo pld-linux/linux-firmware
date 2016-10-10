@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
-%define		rel	2
-%define		ver	20160609
+%define		rel	1
+%define		ver	20160923
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -10,7 +10,7 @@ Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/2bf6ad095ebdf388a99919ca2317b4aa/linux-firmware-%{version}.tar.gz
-# Source0-md5:	2bf6ad095ebdf388a99919ca2317b4aa
+# Source0-md5:	1bcc0aad77e225b8cfd673cefb4fdc59
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -368,6 +368,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/hfi1_dc8051.fw
 /lib/firmware/hfi1_fabric.fw
 /lib/firmware/hfi1_pcie.fw
+/lib/firmware/hfi1_platform.dat
 /lib/firmware/hfi1_sbus.fw
 /lib/firmware/htc_7010.fw
 /lib/firmware/htc_9271.fw
@@ -411,6 +412,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_mmp.bin
 /lib/firmware/qca
 %dir /lib/firmware/qed
+/lib/firmware/qed/qed_init_values_zipped-8.10.10.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
@@ -420,6 +422,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/r8a779x_usb3_v2.dlmem
 /lib/firmware/r8a779x_usb3_v3.dlmem
 /lib/firmware/radeon
+/lib/firmware/rockchip/dptx.bin
 /lib/firmware/rp2.fw
 /lib/firmware/rsi_91x.fw
 /lib/firmware/rt2860.bin
@@ -458,6 +461,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/v4l-cx*.fw
 /lib/firmware/vicam
 /lib/firmware/vntwusb.fw
+/lib/firmware/vpu_d.bin
+/lib/firmware/vpu_p.bin
 /lib/firmware/vxge
 /lib/firmware/whiteheat*.fw
 /lib/firmware/wsm_22.bin
@@ -542,7 +547,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n iwl7260-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
-#/lib/firmware/iwlwifi-7260-*.ucode
+/lib/firmware/iwlwifi-7260-*.ucode
 /lib/firmware/iwlwifi-7265-*.ucode
 /lib/firmware/iwlwifi-7265D-*.ucode
 /lib/firmware/iwlwifi-8000C-*.ucode
