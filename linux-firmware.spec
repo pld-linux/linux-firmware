@@ -548,7 +548,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n iwl7260-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
-/lib/firmware/iwlwifi-7260-*.ucode
+#/lib/firmware/iwlwifi-7260-*.ucode
 /lib/firmware/iwlwifi-7265-*.ucode
 /lib/firmware/iwlwifi-7265D-*.ucode
 /lib/firmware/iwlwifi-8000C-*.ucode
