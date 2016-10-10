@@ -9,7 +9,7 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/2bf6ad095ebdf388a99919ca2317b4aa/linux-firmware-%{version}.tar.gz
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/1bcc0aad77e225b8cfd673cefb4fdc59/linux-firmware-%{version}.tar.gz
 # Source0-md5:	1bcc0aad77e225b8cfd673cefb4fdc59
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
