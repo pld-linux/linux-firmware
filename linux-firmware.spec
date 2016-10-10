@@ -422,6 +422,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/r8a779x_usb3_v2.dlmem
 /lib/firmware/r8a779x_usb3_v3.dlmem
 /lib/firmware/radeon
+%dir /lib/firmware/rockchip
 /lib/firmware/rockchip/dptx.bin
 /lib/firmware/rp2.fw
 /lib/firmware/rsi_91x.fw
