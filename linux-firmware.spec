@@ -67,6 +67,7 @@ Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl1000-firmware < 1:39.31.5.1-3
+Obsoletes:	iwlwifi-1000-ucode
 
 %description -n iwl1000-firmware
 This package contains the firmware required by the Intel wireless
@@ -104,6 +105,7 @@ Version:	15.32.2.9
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl3945-firmware < 15.32.2.9-7
+Obsoletes:	iwlwifi-3945-ucode
 
 %description -n iwl3945-firmware
 This package contains the firmware required by the iwl3945 driver for
@@ -116,6 +118,7 @@ Version:	228.61.2.24
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl4965-firmware < 228.61.2.24-5
+Obsoletes:	iwlwifi-4965-ucode
 
 %description -n iwl4965-firmware
 This package contains the firmware required by the iwl4965 driver for
@@ -128,6 +131,7 @@ Version:	8.83.5.1_1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl5000-firmware < 8.83.5.1_1-3
+Obsoletes:	iwlwifi-5000-ucode
 
 %description -n iwl5000-firmware
 This package contains the firmware required by the iwl5000 driver for
@@ -140,6 +144,7 @@ Version:	8.24.2.2
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl5150-firmware < 8.24.2.2-4
+Obsoletes:	iwlwifi-5150-ucode
 
 %description -n iwl5150-firmware
 This package contains the firmware required by the iwl5150 driver for
@@ -152,6 +157,7 @@ Version:	9.221.4.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl6000-firmware < 9.221.4.1-4
+Obsoletes:	iwlwifi-6000-ucode
 
 %description -n iwl6000-firmware
 This package contains the firmware required by the Intel wireless
@@ -178,6 +184,7 @@ Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl6000g2b-firmware < 17.168.5.2-3
+Obsoletes:	iwlwifi-6030-ucode
 
 %description -n iwl6000g2b-firmware
 This package contains the firmware required by the Intel wireless
@@ -191,6 +198,7 @@ Version:	41.28.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl6050-firmware < 41.28.5.1-5
+Obsoletes:	iwlwifi-6050-ucode
 
 %description -n iwl6050-firmware
 This package contains the firmware required by the Intel wireless
@@ -200,7 +208,7 @@ carefully.
 
 %package -n iwl7260-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 7260 Series Adapters
-Version:	25.30.13.0
+Version:	25.228.9.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwlwifi-7260-ucode
@@ -271,12 +279,6 @@ rmdir linux-firmware-*
 # Perhaps these should be built as subpackages of linux-firmware?
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
 %{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENCE.qla2xxx
-# - iwlwifi-{1000,3945,4965,5000,5150,6000,6030}-ucode.spec
-%{__rm} iwlwifi-{1000-5,3945-[12],4965-[12],5000-[125],5150-2,6000-4,6000g2b-6}.ucode
-
-# (note: LICENCE.iwlwifi_firmware left for remaining iwlwifi files)
-# - obsolete versions of iwlwifi firmwares
-%{__rm} iwlwifi-{1000-3,6000g2a-5,6000g2b-5,6050-4}.ucode
 # - alsa-firmware.spec
 %{__rm} -r ess korg sb16 yamaha
 # We have _some_ ralink firmware in separate packages already. (which packages???)
@@ -304,7 +306,7 @@ rmdir linux-firmware-*
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/firmware
 cp -a . $RPM_BUILD_ROOT/lib/firmware
-%{__rm} $RPM_BUILD_ROOT/lib/firmware/{GPL-3,LICENCE.*,LICENSE.*,README,TDA7706_OM_v*_boot.txt,WHENCE}
+%{__rm} $RPM_BUILD_ROOT/lib/firmware/{GPL-2,GPL-3,LICENCE.*,LICENSE.*,README,TDA7706_OM_v*_boot.txt,WHENCE,check_whence.py}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -486,12 +488,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-135-*.ucode
 
-%if 0
 %files -n iwl1000-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-1000-*.ucode
-%endif
 
 %files -n iwl2000-firmware
 %defattr(644,root,root,755)
@@ -503,7 +503,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-2030-*.ucode
 
-%if 0
 %files -n iwl3945-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
@@ -528,19 +527,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6000-*.ucode
-%endif
 
 %files -n iwl6000g2a-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6000g2a-*.ucode
 
-%if 0
 %files -n iwl6000g2b-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6000g2b-*.ucode
-%endif
 
 %files -n iwl6050-firmware
 %defattr(644,root,root,755)
