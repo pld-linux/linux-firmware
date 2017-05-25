@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20161205
+%define		ver	20170419
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/b0bf236f2ad6879a45b44852c3c30f81/linux-firmware-%{version}.tar.gz
-# Source0-md5:	b0bf236f2ad6879a45b44852c3c30f81
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/sha512/3c2590847bcbedcd2da51511c5eac8398c86379311ef8d5a10088e513e78f240e551414c2988617cd60b69860d0f49cb7483860a32e00600f5237319d538cbc7/linux-firmware-%{version}.tar.gz
+# Source0-md5:	813d5de02a36c558547842905051a0b5
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -400,11 +400,13 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mrvl/sd8787*
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
+/lib/firmware/mt7662*.bin
 /lib/firmware/mts_*.fw
 /lib/firmware/mwl8k
 /lib/firmware/mwlwifi
 /lib/firmware/myri10ge_*.dat
 /lib/firmware/myricom
+/lib/firmware/netronome
 /lib/firmware/nvidia
 /lib/firmware/ositech
 /lib/firmware/qat_895xcc.bin
@@ -416,6 +418,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_mmp.bin
 /lib/firmware/qca
 %dir /lib/firmware/qed
+/lib/firmware/qed/qed_init_values_zipped-8.15.3.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.10.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
