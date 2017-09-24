@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20170419
+%define		ver	20170828
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/sha512/3c2590847bcbedcd2da51511c5eac8398c86379311ef8d5a10088e513e78f240e551414c2988617cd60b69860d0f49cb7483860a32e00600f5237319d538cbc7/linux-firmware-%{version}.tar.gz
-# Source0-md5:	813d5de02a36c558547842905051a0b5
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/sha512/865e202e149da10cc3f481a99fdf7830a4e5f699a2c5c6b6440b8dcf7cd2f8d4ca0605477ecd59baf417656d4b1d02b5cf7e8e8abd62d8c084bad25ed090c1c7/linux-firmware-%{version}.tar.gz
+# Source0-md5:	09d132cd1a27330a1c52fb97284b06aa
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -270,6 +270,8 @@ License:	Redistributable, no modification permitted
 %description -n libertas-sd8787-firmware
 Firmware for Marvell Libertas SD 8787 Network Adapter
 
+%define	no_install_post_strip	1
+
 %prep
 %setup -qc
 mv linux-firmware-*/* .
@@ -342,6 +344,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/bnx2x-e1h-*.fw
 /lib/firmware/brcm
 /lib/firmware/carl9170-1.fw
+/lib/firmware/cavium
 /lib/firmware/cbfw-*.bin
 /lib/firmware/cis
 /lib/firmware/cmmb_*_12mhz.inp
@@ -372,13 +375,13 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/hfi1_dc8051.fw
 /lib/firmware/hfi1_fabric.fw
 /lib/firmware/hfi1_pcie.fw
-/lib/firmware/hfi1_platform.dat
 /lib/firmware/hfi1_sbus.fw
 /lib/firmware/htc_7010.fw
 /lib/firmware/htc_9271.fw
 /lib/firmware/i2400m-fw-usb-*.sbcf
 /lib/firmware/i6050-fw-usb-*.sbcf
 /lib/firmware/i915
+/lib/firmware/imx
 /lib/firmware/intel
 /lib/firmware/intelliport2.bin
 /lib/firmware/isci
@@ -394,6 +397,7 @@ rm -rf $RPM_BUILD_ROOT
 %exclude /lib/firmware/libertas/usb8388_olpc.bin
 /lib/firmware/liquidio
 /lib/firmware/matrox
+/lib/firmware/mellanox
 /lib/firmware/moxa
 /lib/firmware/mrvl
 %exclude /lib/firmware/mrvl/sd8787*
@@ -417,10 +421,12 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_c62x_mmp.bin
 /lib/firmware/qat_mmp.bin
 /lib/firmware/qca
+/lib/firmware/qcom
 %dir /lib/firmware/qed
 /lib/firmware/qed/qed_init_values_zipped-8.15.3.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.10.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.20.0.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
 /lib/firmware/qlogic
@@ -432,6 +438,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir /lib/firmware/rockchip
 /lib/firmware/rockchip/dptx.bin
 /lib/firmware/rp2.fw
+/lib/firmware/rsi
 /lib/firmware/rsi_91x.fw
 /lib/firmware/rt2860.bin
 /lib/firmware/rt2870.bin
@@ -473,6 +480,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/vpu_p.bin
 /lib/firmware/vxge
 /lib/firmware/whiteheat*.fw
+/lib/firmware/wil6210.brd
+/lib/firmware/wil6210.fw
 /lib/firmware/wsm_22.bin
 /lib/firmware/yam
 
