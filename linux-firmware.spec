@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20170828
+%define		ver	20171009
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.gz/sha512/865e202e149da10cc3f481a99fdf7830a4e5f699a2c5c6b6440b8dcf7cd2f8d4ca0605477ecd59baf417656d4b1d02b5cf7e8e8abd62d8c084bad25ed090c1c7/linux-firmware-%{version}.tar.gz
-# Source0-md5:	09d132cd1a27330a1c52fb97284b06aa
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/300f188dc95f8833bc8ebaa3b384571a65f829cfceabf15dabc374bbfbb1169f7eb1cf5216aedf1cdede3df94d1260e541d5d8af718df1701467afae56aeeaa2/linux-firmware-%{version}.tar.xz
+# Source0-md5:	37322fcca7d203761ae8dd32b06515d4
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -317,6 +317,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.* LICENSE.* README TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
+/lib/firmware/a300_pfp.fw
+/lib/firmware/a300_pm4.fw
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
