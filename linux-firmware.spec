@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20171009
+%define		ver	20171126
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/300f188dc95f8833bc8ebaa3b384571a65f829cfceabf15dabc374bbfbb1169f7eb1cf5216aedf1cdede3df94d1260e541d5d8af718df1701467afae56aeeaa2/linux-firmware-%{version}.tar.xz
-# Source0-md5:	37322fcca7d203761ae8dd32b06515d4
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/b6901de0904cf0d5d571e57f2a4d4171277b9f655bfb7aeb71f7699bc6df6df187c790a15845ea5fab7594a6d715f4184ba545963fdb0c0ec4381a42376376ea/linux-firmware-%{version}.tar.xz
+# Source0-md5:	d8289dc55f6663718c4df35ed925c67c
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -388,6 +388,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/intelliport2.bin
 /lib/firmware/isci
 /lib/firmware/isdbt_*.inp
+/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-33.ucode
+/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-34.ucode
+/lib/firmware/iwlwifi-9260-th-b0-jf-b0-33.ucode
+/lib/firmware/iwlwifi-9260-th-b0-jf-b0-34.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -431,6 +435,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values_zipped-8.20.0.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.33.1.0.bin
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
