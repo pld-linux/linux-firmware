@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20171126
+%define		ver	20171215
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/b6901de0904cf0d5d571e57f2a4d4171277b9f655bfb7aeb71f7699bc6df6df187c790a15845ea5fab7594a6d715f4184ba545963fdb0c0ec4381a42376376ea/linux-firmware-%{version}.tar.xz
-# Source0-md5:	d8289dc55f6663718c4df35ed925c67c
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/5fa408faf97e384c94f62a0e61d54b946589704ee91bfc95e198f0c3761fffb9dc33407775b77e996d78b66976f09530150e479b2d5083b0d8252ad4c4e97aea/linux-firmware-%{version}.tar.xz
+# Source0-md5:	4d960a99ab5c1eed272c00b6403c9e7a
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
