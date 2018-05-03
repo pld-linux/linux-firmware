@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
-%define		rel	2
-%define		ver	20171215
+%define		rel	1
+%define		ver	20180402
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/5fa408faf97e384c94f62a0e61d54b946589704ee91bfc95e198f0c3761fffb9dc33407775b77e996d78b66976f09530150e479b2d5083b0d8252ad4c4e97aea/linux-firmware-%{version}.tar.xz
-# Source0-md5:	4d960a99ab5c1eed272c00b6403c9e7a
+Source0:	https://src.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/e550f357009694a5af96b3e4a14a6b7a0793e6fe5605c35a4d02e803e36dd18208492c786bfd9f15d87d5a19d5f3c25a5827764f0afe32ec828ef2d57712b0b1/linux-firmware-%{version}.tar.xz
+# Source0-md5:	cb2470f73d57f343c1c65577534eda70
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -429,13 +429,19 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qca
 /lib/firmware/qcom
 %dir /lib/firmware/qed
-/lib/firmware/qed/qed_init_values_zipped-8.15.3.0.bin
+/lib/firmware/qed/qed_init_values-8.10.9.0.bin
+/lib/firmware/qed/qed_init_values-8.14.6.0.bin
+/lib/firmware/qed/qed_init_values-8.18.9.0.bin
+/lib/firmware/qed/qed_init_values-8.20.0.0.bin
+/lib/firmware/qed/qed_init_values-8.30.12.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.10.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.15.3.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.20.0.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.33.1.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.33.11.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
-/lib/firmware/qed/qed_init_values_zipped-8.33.1.0.bin
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
