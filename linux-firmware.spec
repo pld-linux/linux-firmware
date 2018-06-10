@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20180402
+%define		ver	20180525
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	https://src.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/e550f357009694a5af96b3e4a14a6b7a0793e6fe5605c35a4d02e803e36dd18208492c786bfd9f15d87d5a19d5f3c25a5827764f0afe32ec828ef2d57712b0b1/linux-firmware-%{version}.tar.xz
-# Source0-md5:	cb2470f73d57f343c1c65577534eda70
+Source0:	https://src.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/d39474a34b0ea8ee856ee0185d06fb15b26c657b79999502916a689ebe953c5b347cbc533f8d55489bd482358dcaa6321e88ab60a97e71da9a6f5a0ac82bb58e/%{name}-%{version}.tar.xz
+# Source0-md5:	12b3303665142fdad96e596f53066555
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -390,8 +390,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/isdbt_*.inp
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-33.ucode
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-34.ucode
+/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-38.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-33.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-34.ucode
+/lib/firmware/iwlwifi-9260-th-b0-jf-b0-38.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -434,12 +436,14 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values-8.18.9.0.bin
 /lib/firmware/qed/qed_init_values-8.20.0.0.bin
 /lib/firmware/qed/qed_init_values-8.30.12.0.bin
+/lib/firmware/qed/qed_init_values-8.33.12.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.10.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.15.3.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.20.0.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.33.1.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.33.11.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.37.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
 /lib/firmware/qlogic
