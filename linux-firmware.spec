@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20180525
+%define		ver	20181008
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	https://src.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/d39474a34b0ea8ee856ee0185d06fb15b26c657b79999502916a689ebe953c5b347cbc533f8d55489bd482358dcaa6321e88ab60a97e71da9a6f5a0ac82bb58e/%{name}-%{version}.tar.xz
-# Source0-md5:	12b3303665142fdad96e596f53066555
+Source0:	https://src.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/f1ad584870cac242bac3990e4f57fd0127c32b52e05dd30efc5e9f975fb6a7cafff7aee6d09fb0f403ef979ed51b1e1021483061252b6441e2bd7476201d8cfa/linux-firmware-%{version}.tar.xz
+# Source0-md5:	772048e2d3349c99df9b7745acf2946d
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -345,6 +345,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/bnx2x-e1-*.fw
 /lib/firmware/bnx2x-e1h-*.fw
 /lib/firmware/brcm
+/lib/firmware/cadence/mhdp8546.bin
 /lib/firmware/carl9170-1.fw
 /lib/firmware/cavium
 /lib/firmware/cbfw-*.bin
@@ -391,9 +392,11 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-33.ucode
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-34.ucode
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-38.ucode
+/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-41.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-33.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-34.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-38.ucode
+/lib/firmware/iwlwifi-9260-th-b0-jf-b0-41.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -405,6 +408,12 @@ rm -rf $RPM_BUILD_ROOT
 %exclude /lib/firmware/libertas/usb8388_olpc.bin
 /lib/firmware/liquidio
 /lib/firmware/matrox
+%dir /lib/firmware/mediatek
+/lib/firmware/mediatek/mt7610u.bin
+/lib/firmware/mediatek/mt7622pr2h.bin
+/lib/firmware/mediatek/mt7662u.bin
+/lib/firmware/mediatek/mt7662u_rom_patch.bin
+/lib/firmware/mediatek/mt7668pr2h.bin
 /lib/firmware/mellanox
 /lib/firmware/moxa
 /lib/firmware/mrvl
@@ -444,6 +453,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values_zipped-8.33.1.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.33.11.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.37.2.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.37.7.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
 /lib/firmware/qlogic
@@ -467,6 +477,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtl_bt
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
+%dir /lib/firmware/rtw88
+/lib/firmware/rtw88/rtw8822b_fw.bin
+/lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/s2250*.fw
 /lib/firmware/s5p-mfc.fw
 /lib/firmware/s5p-mfc-v6.fw
