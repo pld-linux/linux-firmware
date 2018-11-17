@@ -1,6 +1,6 @@
 # TODO
 # - subpackages for various firmwares?
-%define		rel	2
+%define		rel	3
 %define		ver	20181008
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
@@ -346,7 +346,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/bnx2x-e1h-*.fw
 /lib/firmware/brcm
 /lib/firmware/cadence
-/lib/firmware/cadence/mhdp8546.bin
 /lib/firmware/carl9170-1.fw
 /lib/firmware/cavium
 /lib/firmware/cbfw-*.bin
