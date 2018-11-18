@@ -32,7 +32,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 10
 Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl100-firmware < 39.31.5.1-4
 
 %description -n iwl100-firmware
 This package contains the firmware required by the Intel wireless
@@ -161,7 +160,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	15.32.2.9
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl3945-firmware < 15.32.2.9-7
 Obsoletes:	iwlwifi-3945-ucode
 
 %description -n iwl3945-firmware
@@ -180,7 +178,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	228.61.2.24
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl4965-firmware < 228.61.2.24-5
 Obsoletes:	iwlwifi-4965-ucode
 
 %description -n iwl4965-firmware
@@ -199,7 +196,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	8.83.5.1_1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl5000-firmware < 8.83.5.1_1-3
 Obsoletes:	iwlwifi-5000-ucode
 
 %description -n iwl5000-firmware
@@ -219,7 +215,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	8.24.2.2
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl5150-firmware < 8.24.2.2-4
 Obsoletes:	iwlwifi-5150-ucode
 
 %description -n iwl5150-firmware
@@ -239,7 +234,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	9.221.4.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl6000-firmware < 9.221.4.1-4
 Obsoletes:	iwlwifi-6000-ucode
 
 %description -n iwl6000-firmware
@@ -259,7 +253,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl6000g2a-firmware < 17.168.5.3-3
 
 %description -n iwl6000g2a-firmware
 This package contains the firmware required by the Intel wireless
@@ -278,7 +271,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl6000g2b-firmware < 17.168.5.2-3
 Obsoletes:	iwlwifi-6030-ucode
 
 %description -n iwl6000g2b-firmware
@@ -298,7 +290,6 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	41.28.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwl6050-firmware < 41.28.5.1-5
 Obsoletes:	iwlwifi-6050-ucode
 
 %description -n iwl6050-firmware
