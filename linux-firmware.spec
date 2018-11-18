@@ -16,6 +16,8 @@ Obsoletes:	microcode-data-amd
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		no_install_post_strip	1
+
 %description
 This package includes firmware files required for some devices to
 operate.
@@ -26,6 +28,7 @@ urządzeń.
 
 %package -n iwl100-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 100 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 100
 Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -37,8 +40,14 @@ drivers for Linux to support the iwl100 hardware. Usage of the
 firmware is subject to the terms and conditions contained inside the
 provided LICENSE file. Please read it carefully.
 
+%description -n iwl100-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl100. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
 %package -n iwl105-firmware
 Summary:	Firmware for Intel(R) Centrino Wireless-N 105 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wireless-N 105
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -49,8 +58,14 @@ drivers for Linux to support the iwl105 hardware. Usage of the
 firmware is subject to the terms and conditions contained inside the
 provided LICENSE file. Please read it carefully.
 
+%description -n iwl105-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl105. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
 %package -n iwl135-firmware
 Summary:	Firmware for Intel(R) Centrino Wireless-N 135 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wireless-N 135
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -61,8 +76,14 @@ drivers for Linux to support the iwl135 hardware. Usage of the
 firmware is subject to the terms and conditions contained inside the
 provided LICENSE file. Please read it carefully.
 
+%description -n iwl135-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl135. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
 %package -n iwl1000-firmware
 Summary:	Firmware for Intel(R) PRO/Wireless 1000 B/G/N network adaptors
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Pro/Wireless 1000 B/G/N
 Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -75,8 +96,14 @@ drivers for Linux to support the iwl1000 hardware. Usage of the
 firmware is subject to the terms and conditions contained inside the
 provided LICENSE file. Please read it carefully.
 
+%description -n iwl1000-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl1000. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
 %package -n iwl2000-firmware
 Summary:	Firmware for Intel(R) Centrino Wireless-N 2000 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wireless-N 2000
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -87,8 +114,14 @@ drivers for Linux to support the iwl2000 hardware. Usage of the
 firmware is subject to the terms and conditions contained inside the
 provided LICENSE file. Please read it carefully.
 
+%description -n iwl2000-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl2000. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
 %package -n iwl2030-firmware
 Summary:	Firmware for Intel(R) Centrino Wireless-N 2030 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wireless-N 2030
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -99,8 +132,32 @@ drivers for Linux to support the iwl2030 hardware. Usage of the
 firmware is subject to the terms and conditions contained inside the
 provided LICENSE file. Please read it carefully.
 
+%description -n iwl2030-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl2030. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
+%package -n iwl3160-firmware
+Summary:	Firmware for Intel(R) Wireless WiFi Link 3160 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 3160
+Version:	25.30.13.0
+Release:	%{ver}.%{rel}
+License:	Redistributable, no modification permitted
+
+%description -n iwl3160-firmware
+This package contains the firmware required by the Intel wireless
+drivers for Linux to support the iwl3160 hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl3160-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl3160. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
 %package -n iwl3945-firmware
 Summary:	Firmware for Intel(R) PRO/Wireless 3945 A/B/G network adaptors
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless 3945 A/B/G
 Version:	15.32.2.9
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -112,8 +169,14 @@ This package contains the firmware required by the iwl3945 driver for
 Linux. Usage of the firmware is subject to the terms and conditions
 contained inside the provided LICENSE file. Please read it carefully.
 
+%description -n iwl3945-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagany przez linuksowy sterownik
+iwl3945. Używanie firmware'u podlega warunkom opisanym w załączonym
+pliku LICENSE.
+
 %package -n iwl4965-firmware
 Summary:	Firmware for Intel(R) PRO/Wireless 4965 A/G/N network adaptors
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless 4965 A/G/N
 Version:	228.61.2.24
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -125,8 +188,14 @@ This package contains the firmware required by the iwl4965 driver for
 Linux. Usage of the firmware is subject to the terms and conditions
 contained inside the provided LICENSE file. Please read it carefully.
 
+%description -n iwl4965-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagany przez linuksowy sterownik
+iwl4965. Używanie firmware'u podlega warunkom opisanym w załączonym
+pliku LICENSE.
+
 %package -n iwl5000-firmware
 Summary:	Firmware for Intel(R) PRO/Wireless 5000 A/G/N network adaptors
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless 5000 A/G/N
 Version:	8.83.5.1_1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -134,12 +203,19 @@ Obsoletes:	iwl5000-firmware < 8.83.5.1_1-3
 Obsoletes:	iwlwifi-5000-ucode
 
 %description -n iwl5000-firmware
-This package contains the firmware required by the iwl5000 driver for
-Linux. Usage of the firmware is subject to the terms and conditions
-contained inside the provided LICENSE file. Please read it carefully.
+This package contains the firmware required by the Intel wireless
+drivers for Linux to support the iwl5000 hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl5000-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl5000. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl5150-firmware
 Summary:	Firmware for Intel(R) PRO/Wireless 5150 A/G/N network adaptors
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless 5150 A/G/N
 Version:	8.24.2.2
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -147,12 +223,19 @@ Obsoletes:	iwl5150-firmware < 8.24.2.2-4
 Obsoletes:	iwlwifi-5150-ucode
 
 %description -n iwl5150-firmware
-This package contains the firmware required by the iwl5150 driver for
-Linux. Usage of the firmware is subject to the terms and conditions
-contained inside the provided LICENSE file. Please read it carefully.
+This package contains the firmware required by the Intel wireless
+drivers for Linux to support the iwl5150 hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl5150-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl5150. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl6000-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 6000 AGN Adapter
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 6000 AGN
 Version:	9.221.4.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -161,12 +244,18 @@ Obsoletes:	iwlwifi-6000-ucode
 
 %description -n iwl6000-firmware
 This package contains the firmware required by the Intel wireless
-drivers for Linux. Usage of the firmware is subject to the terms and
-conditions contained inside the provided LICENSE file. Please read it
-carefully.
+drivers for Linux to support the iwl6000 hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl6000-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl6000. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl6000g2a-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 6005 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 6005
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -174,12 +263,18 @@ Obsoletes:	iwl6000g2a-firmware < 17.168.5.3-3
 
 %description -n iwl6000g2a-firmware
 This package contains the firmware required by the Intel wireless
-drivers for Linux. Usage of the firmware is subject to the terms and
-conditions contained inside the provided LICENSE file. Please read it
-carefully.
+drivers for Linux to support the iwl6000g2a hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl6000g2a-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl6000g2a. Używanie firmware'u
+podlega warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl6000g2b-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 6030 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 6030
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -188,12 +283,18 @@ Obsoletes:	iwlwifi-6030-ucode
 
 %description -n iwl6000g2b-firmware
 This package contains the firmware required by the Intel wireless
-drivers for Linux. Usage of the firmware is subject to the terms and
-conditions contained inside the provided LICENSE file. Please read it
-carefully.
+drivers for Linux to support the iwl6000g2b hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl6000g2b-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl6000g2b. Używanie firmware'u
+podlega warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl6050-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 6050 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 6050
 Version:	41.28.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -202,12 +303,18 @@ Obsoletes:	iwlwifi-6050-ucode
 
 %description -n iwl6050-firmware
 This package contains the firmware required by the Intel wireless
-drivers for Linux. Usage of the firmware is subject to the terms and
-conditions contained inside the provided LICENSE file. Please read it
-carefully.
+drivers for Linux to support the iwl6050 hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
+
+%description -n iwl6050-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl6050. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl7260-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 7260 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 7260
 Version:	25.228.9.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
@@ -215,34 +322,59 @@ Obsoletes:	iwlwifi-7260-ucode
 
 %description -n iwl7260-firmware
 This package contains the firmware required by the Intel wireless
-drivers for Linux. Usage of the firmware is subject to the terms and
-conditions contained inside the provided LICENSE file. Please read it
-carefully.
+drivers for Linux to support the iwl7260 hardware. Usage of the
+firmware is subject to the terms and conditions contained inside the
+provided LICENSE file. Please read it carefully.
 
-%package -n iwl3160-firmware
-Summary:	Firmware for Intel(R) Wireless WiFi Link 3160 Series Adapters
-Version:	25.30.13.0
-Release:	%{ver}.%{rel}
+%description -n iwl7260-firmware -l pl.UTF-8
+Ten pakiet zawiera firmware wymagane przez linuksowe sterowniki do
+kart bezprzewodowych Intela typu iwl7260. Używanie firmware'u podlega
+warunkom opisanym w załączonym pliku LICENSE.
+
+%package -n libertas-sd8686-firmware
+Summary:	Firmware for Marvell Libertas SD 8686 Network Adapter
+Summary(pl.UTF-8):	Firmware dla kart sieciowych Marvell Libertas SD 8686
+Version:	0.%{ver}
+Release:	%{rel}
+License:	Redistributable, no modification permitted
+Obsoletes:	libertas-sd8686-firmware < 9.70.20.p0-4
+
+%description -n libertas-sd8686-firmware
+Firmware for Marvell Libertas SD 8686 Network Adapter.
+
+%description -n libertas-sd8686-firmware -l pl.UTF-8
+Firmware dla kart sieciowych Marvell Libertas SD 8686.
+
+%package -n libertas-sd8787-firmware
+Summary:	Firmware for Marvell Libertas SD 8787 Network Adapter
+Summary(pl.UTF-8):	Firmware dla kart sieciowych Marvell Libertas SD 8787
+Version:	0.%{ver}
+Release:	%{rel}
 License:	Redistributable, no modification permitted
 
-%description -n iwl3160-firmware
-This package contains the firmware required by the Intel wireless
-drivers for Linux. Usage of the firmware is subject to the terms and
-conditions contained inside the provided LICENSE file. Please read it
-carefully.
+%description -n libertas-sd8787-firmware
+Firmware for Marvell Libertas SD 8787 Network Adapter.
+
+%description -n libertas-sd8787-firmware -l pl.UTF-8
+Firmware dla kart sieciowych Marvell Libertas SD 8787.
 
 %package -n libertas-usb8388-firmware
 Summary:	Firmware for Marvell Libertas USB 8388 Network Adapter
+Summary(pl.UTF-8):	Firmware dla kart sieciowych Marvell Libertas USB 8388
 Version:	0.%{ver}
 Release:	%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	libertas-usb8388-firmware < 2:5.110.22.p23-8
 
 %description -n libertas-usb8388-firmware
-Firmware for Marvell Libertas USB 8388 Network Adapter
+Firmware for Marvell Libertas USB 8388 Network Adapter.
+
+%description -n libertas-usb8388-firmware -l pl.UTF-8
+Firmware dla kart sieciowych Marvell Libertas USB 8388.
 
 %package -n libertas-usb8388-olpc-firmware
 Summary:	OLPC firmware for Marvell Libertas USB 8388 Network Adapter
+Summary(pl.UTF-8):	Firmware OLPC dla kart sieciowych Marvell Libertas USB 8388
 Version:	0.%{ver}
 Release:	%{rel}
 License:	Redistributable, no modification permitted
@@ -251,30 +383,13 @@ License:	Redistributable, no modification permitted
 Firmware for Marvell Libertas USB 8388 Network Adapter with OLPC mesh
 network support.
 
-%package -n libertas-sd8686-firmware
-Summary:	Firmware for Marvell Libertas SD 8686 Network Adapter
-Version:	0.%{ver}
-Release:	%{rel}
-License:	Redistributable, no modification permitted
-Obsoletes:	libertas-sd8686-firmware < 9.70.20.p0-4
-
-%description -n libertas-sd8686-firmware
-Firmware for Marvell Libertas SD 8686 Network Adapter
-
-%package -n libertas-sd8787-firmware
-Summary:	Firmware for Marvell Libertas SD 8787 Network Adapter
-Version:	0.%{ver}
-Release:	%{rel}
-License:	Redistributable, no modification permitted
-
-%description -n libertas-sd8787-firmware
-Firmware for Marvell Libertas SD 8787 Network Adapter
-
-%define	no_install_post_strip	1
+%description -n libertas-usb8388-olpc-firmware -l pl.UTF-8
+Firmware dla kart sieciowych Marvell Libertas USB 8388 z obsługą
+punktów sieci OLPC.
 
 %prep
 %setup -qc
-mv linux-firmware-*/* .
+%{__mv} linux-firmware-*/* .
 rmdir linux-firmware-*
 
 # Remove firmware shipped in separate packages already
@@ -545,6 +660,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-2030-*.ucode
 
+%files -n iwl3160-firmware
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.iwlwifi_firmware
+/lib/firmware/iwlwifi-3160-*.ucode
+/lib/firmware/iwlwifi-3168-*.ucode
+
 %files -n iwl3945-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.iwlwifi_firmware
@@ -594,11 +715,17 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-8000C-*.ucode
 /lib/firmware/iwlwifi-8265-*.ucode
 
-%files -n iwl3160-firmware
+%files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
-/lib/firmware/iwlwifi-3160-*.ucode
-/lib/firmware/iwlwifi-3168-*.ucode
+%doc WHENCE LICENCE.Marvell
+%dir /lib/firmware/libertas
+/lib/firmware/libertas/sd8686*
+
+%files -n libertas-sd8787-firmware
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.Marvell
+%dir /lib/firmware/mrvl
+/lib/firmware/mrvl/sd8787*
 
 %files -n libertas-usb8388-firmware
 %defattr(644,root,root,755)
@@ -611,15 +738,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENCE.Marvell
 %dir /lib/firmware/libertas
 /lib/firmware/libertas/usb8388_olpc.bin
-
-%files -n libertas-sd8686-firmware
-%defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell
-%dir /lib/firmware/libertas
-/lib/firmware/libertas/sd8686*
-
-%files -n libertas-sd8787-firmware
-%defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell
-%dir /lib/firmware/mrvl
-/lib/firmware/mrvl/sd8787*
