@@ -1,6 +1,6 @@
 # TODO
 # - subpackages for various firmwares?
-%define		rel	3
+%define		rel	4
 %define		ver	20181008
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
@@ -313,12 +313,13 @@ kart bezprzewodowych Intela typu iwl6050. Używanie firmware'u podlega
 warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl7260-firmware
-Summary:	Firmware for Intel(R) Wireless WiFi Link 7260 Series Adapters
-Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 7260
+Summary:	Firmware for Intel(R) Wireless WiFi Link 726x/8000/9000 Series Adapters
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 726x/8000/9000
 Version:	25.228.9.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwlwifi-7260-ucode
+Conflicts:	linux-firmware < 20181008-4
 
 %description -n iwl7260-firmware
 This package contains the firmware required by the Intel wireless
@@ -414,6 +415,11 @@ rmdir linux-firmware-*
 %{__rm} radeon/RV740_smc.bin
 %{__rm} radeon/RV770_{smc,uvd}.bin
 
+# No need to install old firmware versions where we also provide newer versions
+# which are preferred and support the same (or more) hardware
+%{__rm} libertas/sd8686_v8*
+%{__rm} libertas/usb8388_v5.bin
+
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
 %{__rm} -r carl9170fw usbdux
@@ -504,23 +510,22 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/intelliport2.bin
 /lib/firmware/isci
 /lib/firmware/isdbt_*.inp
-/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-33.ucode
-/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-34.ucode
-/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-38.ucode
-/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-41.ucode
-/lib/firmware/iwlwifi-9260-th-b0-jf-b0-33.ucode
-/lib/firmware/iwlwifi-9260-th-b0-jf-b0-34.ucode
-/lib/firmware/iwlwifi-9260-th-b0-jf-b0-38.ucode
-/lib/firmware/iwlwifi-9260-th-b0-jf-b0-41.ucode
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
 /lib/firmware/lbtf_usb.bin
 /lib/firmware/lgs8g75.fw
-/lib/firmware/libertas
-%exclude /lib/firmware/libertas/usb8388_v9.bin
-%exclude /lib/firmware/libertas/sd8686*
-%exclude /lib/firmware/libertas/usb8388_olpc.bin
+%dir /lib/firmware/libertas
+/lib/firmware/libertas/cf8381*.bin
+/lib/firmware/libertas/cf8385*.bin
+/lib/firmware/libertas/gspi8682*.bin
+/lib/firmware/libertas/gspi8686_v9*.bin
+/lib/firmware/libertas/gspi8688*.bin
+/lib/firmware/libertas/lbtf_sdio.bin
+/lib/firmware/libertas/sd8385*.bin
+/lib/firmware/libertas/sd8682*.bin
+/lib/firmware/libertas/sd8688*.bin
+/lib/firmware/libertas/usb8682.bin
 /lib/firmware/liquidio
 /lib/firmware/matrox
 %dir /lib/firmware/mediatek
@@ -531,9 +536,22 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7668pr2h.bin
 /lib/firmware/mellanox
 /lib/firmware/moxa
-/lib/firmware/mrvl
-%exclude /lib/firmware/mrvl/sd8787*
-/lib/firmware/mrvl/sd8787*
+%dir /lib/firmware/mrvl
+/lib/firmware/mrvl/pcie8897_uapsta.bin
+/lib/firmware/mrvl/pcie8997_wlan_v4.bin
+/lib/firmware/mrvl/pcieuart8997_combo_v4.bin
+/lib/firmware/mrvl/pcieusb8997_combo_v4.bin
+/lib/firmware/mrvl/sd8688*.bin
+/lib/firmware/mrvl/sd8797_uapsta.bin
+/lib/firmware/mrvl/sd8801_uapsta.bin
+/lib/firmware/mrvl/sd8887_uapsta.bin
+/lib/firmware/mrvl/sd8897_uapsta.bin
+/lib/firmware/mrvl/sdsd8997_combo_v4.bin
+/lib/firmware/mrvl/usb8766_uapsta.bin
+/lib/firmware/mrvl/usb8797_uapsta.bin
+/lib/firmware/mrvl/usb8801_uapsta.bin
+/lib/firmware/mrvl/usb8897_uapsta.bin
+/lib/firmware/mrvl/usbusb8997_combo_v4.bin
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
@@ -714,18 +732,20 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-7265D-*.ucode
 /lib/firmware/iwlwifi-8000C-*.ucode
 /lib/firmware/iwlwifi-8265-*.ucode
+/lib/firmware/iwlwifi-9000-pu-b0-jf-b0-*.ucode
+/lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.Marvell
 %dir /lib/firmware/libertas
-/lib/firmware/libertas/sd8686*
+/lib/firmware/libertas/sd8686_v9*.bin
 
 %files -n libertas-sd8787-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.Marvell
 %dir /lib/firmware/mrvl
-/lib/firmware/mrvl/sd8787*
+/lib/firmware/mrvl/sd8787_uapsta.bin
 
 %files -n libertas-usb8388-firmware
 %defattr(644,root,root,755)
