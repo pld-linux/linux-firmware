@@ -1,6 +1,6 @@
 # TODO
 # - subpackages for various firmwares?
-%define		rel	1
+%define		rel	2
 %define		ver	20190213
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
