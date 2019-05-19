@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
-%define		rel	2
-%define		ver	20190213
+%define		rel	1
+%define		ver	20190514
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,8 +9,8 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	https://src.fedoraproject.org/repo/pkgs/linux-firmware/%{name}-%{version}.tar.xz/sha512/493fb7b190380a5f23e906def749f41501ab240c999f05344008cda765b7dbafef68c76a89bce510745b4e9131c0401d8c5feb08613d90cb077d2c81d76c64dc/linux-firmware-%{version}.tar.xz
-# Source0-md5:	2965a9a94d3be35df09b80c6f3712dd4
+Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
+# Source0-md5:	0428313a2dff862292ea6d975a6e87b3
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
@@ -435,6 +435,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
+/lib/firmware/amd
 /lib/firmware/amdgpu
 /lib/firmware/amd-ucode
 /lib/firmware/ar3k
@@ -476,6 +477,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/dpaa2/mc/mc_10.10.0_ls1088a.itb
 /lib/firmware/dpaa2/mc/mc_10.10.0_ls2088a.itb
 /lib/firmware/dpaa2/mc/mc_10.10.0_lx2160a.itb
+/lib/firmware/dpaa2/mc/mc_10.14.3_ls1088a.itb
+/lib/firmware/dpaa2/mc/mc_10.14.3_ls2088a.itb
+/lib/firmware/dpaa2/mc/mc_10.14.3_lx2160a.itb
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
@@ -525,13 +529,17 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/liquidio
 /lib/firmware/matrox
 %dir /lib/firmware/mediatek
-/lib/firmware/mediatek/mt7610u.bin
 /lib/firmware/mediatek/mt7610e.bin
+/lib/firmware/mediatek/mt7610u.bin
+/lib/firmware/mediatek/mt7615_cr4.bin
+/lib/firmware/mediatek/mt7615_n9.bin
+/lib/firmware/mediatek/mt7615_rom_patch.bin
 /lib/firmware/mediatek/mt7622pr2h.bin
 /lib/firmware/mediatek/mt7650e.bin
 /lib/firmware/mediatek/mt7662u.bin
 /lib/firmware/mediatek/mt7662u_rom_patch.bin
 /lib/firmware/mediatek/mt7668pr2h.bin
+/lib/firmware/meson
 %dir /lib/firmware/microchip
 /lib/firmware/microchip/mscc_vsc8574_revb_int8051_29e8.bin
 /lib/firmware/microchip/mscc_vsc8584_revb_int8051_fb48.bin
@@ -737,6 +745,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-8265-*.ucode
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
+/lib/firmware/iwlwifi-cc-a0-46.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
