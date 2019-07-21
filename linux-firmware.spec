@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20190514
+%define		ver	20190717
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -9,9 +9,14 @@ Version:	%{ver}
 Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
-Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
-# Source0-md5:	0428313a2dff862292ea6d975a6e87b3
+# in case git snapshot is needed
+#Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
+# upstream tarball
+Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
+# Source0-md5:	b989c5c5b140a6fbf027fd5c5fb69df1
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Obsoletes:	microcode-data-amd
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -745,7 +750,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-8265-*.ucode
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
-/lib/firmware/iwlwifi-cc-a0-46.ucode
+/lib/firmware/iwlwifi-Qu-*-b0-48.ucode
+/lib/firmware/iwlwifi-QuZ-a0-*-b0-48.ucode
+/lib/firmware/iwlwifi-cc-a0-*.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
