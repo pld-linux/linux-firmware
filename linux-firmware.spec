@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20190717
+%define		ver	20190815
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -13,7 +13,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	b989c5c5b140a6fbf027fd5c5fb69df1
+# Source0-md5:	65633818cb974a74ac6e31f2af390454
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -485,6 +485,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/dpaa2/mc/mc_10.14.3_ls1088a.itb
 /lib/firmware/dpaa2/mc/mc_10.14.3_ls2088a.itb
 /lib/firmware/dpaa2/mc/mc_10.14.3_lx2160a.itb
+/lib/firmware/dpaa2/mc/mc_10.16.2_ls1088a.itb
+/lib/firmware/dpaa2/mc/mc_10.16.2_ls2088a.itb
+/lib/firmware/dpaa2/mc/mc_10.16.2_lx2160a.itb
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
@@ -629,6 +632,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir /lib/firmware/rtw88
 /lib/firmware/rtw88/rtw8822b_fw.bin
 /lib/firmware/rtw88/rtw8822c_fw.bin
+/lib/firmware/rtw88/rtw8822c_wow_fw.bin
 /lib/firmware/s2250*.fw
 /lib/firmware/s5p-mfc.fw
 /lib/firmware/s5p-mfc-v6.fw
