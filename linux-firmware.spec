@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 %define		rel	1
-%define		ver	20190815
+%define		ver	20190923
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -13,7 +13,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	65633818cb974a74ac6e31f2af390454
+# Source0-md5:	1a56b1b972b4eeda44c0aada84510758
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
