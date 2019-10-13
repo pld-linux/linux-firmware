@@ -1,5 +1,6 @@
 # TODO
 # - subpackages for various firmwares?
+# - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
 %define		ver	20190923
 Summary:	Firmware files used by the Linux kernel
