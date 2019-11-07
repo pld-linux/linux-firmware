@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20190923
+%define		ver	20191022
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	1a56b1b972b4eeda44c0aada84510758
+# Source0-md5:	6b60e16f25bdce250e3432f3e0f5ff52
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -386,9 +386,7 @@ Firmware dla kart sieciowych Marvell Libertas USB 8388 z obsługą
 punktów sieci OLPC.
 
 %prep
-%setup -qc
-%{__mv} linux-firmware-*/* .
-rmdir linux-firmware-*
+%setup -q
 
 # Remove firmware shipped in separate packages already
 # Perhaps these should be built as subpackages of linux-firmware?
@@ -422,19 +420,22 @@ rmdir linux-firmware-*
 %{__rm} -r carl9170fw usbdux
 %{__rm} Makefile configure
 
+%{__mv} rtw88/README README.rtw88
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/lib/firmware
-cp -a . $RPM_BUILD_ROOT/lib/firmware
-%{__rm} $RPM_BUILD_ROOT/lib/firmware/{GPL-2,GPL-3,LICENCE.*,LICENSE.*,README,TDA7706_OM_v*_boot.txt,WHENCE,check_whence.py}
+
+./copy-firmware.sh $RPM_BUILD_ROOT/lib/firmware
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.* LICENSE.* README TDA7706_OM_v*_boot.txt
+%doc WHENCE LICENCE.* LICENSE.* README README.rtw88 TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
+/lib/firmware/TDA7706_OM_v*_boot.txt
+# links to qcom/a300_*.fw
 /lib/firmware/a300_pfp.fw
 /lib/firmware/a300_pm4.fw
 /lib/firmware/acenic
@@ -533,6 +534,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/libertas/lbtf_sdio.bin
 /lib/firmware/libertas/sd8385*.bin
 /lib/firmware/libertas/sd8682*.bin
+# links to mrvl/sd8688*
 /lib/firmware/libertas/sd8688*.bin
 /lib/firmware/libertas/usb8682.bin
 /lib/firmware/liquidio
@@ -588,6 +590,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_c3xxx_mmp.bin
 /lib/firmware/qat_c62x.bin
 /lib/firmware/qat_c62x_mmp.bin
+# link to qat_895xcc_mmp.bin
 /lib/firmware/qat_mmp.bin
 /lib/firmware/qca
 /lib/firmware/qcom
@@ -622,8 +625,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rsi_91x.fw
 /lib/firmware/rt2860.bin
 /lib/firmware/rt2870.bin
+# link to rt2870.bin
 /lib/firmware/rt3070.bin
 /lib/firmware/rt3071.bin
+# link to rt2860.bin
 /lib/firmware/rt3090.bin
 /lib/firmware/rt3290.bin
 /lib/firmware/RTL8192E
@@ -634,6 +639,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw88/rtw8822b_fw.bin
 /lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
+# links to go7007/s2250*
 /lib/firmware/s2250*.fw
 /lib/firmware/s5p-mfc.fw
 /lib/firmware/s5p-mfc-v6.fw
