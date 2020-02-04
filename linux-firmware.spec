@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20191022
+%define		ver	20200122
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	6b60e16f25bdce250e3432f3e0f5ff52
+# Source0-md5:	ac291b21f366ae2a37193ec8f14c39d2
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -490,6 +490,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/dpaa2/mc/mc_10.16.2_ls1088a.itb
 /lib/firmware/dpaa2/mc/mc_10.16.2_ls2088a.itb
 /lib/firmware/dpaa2/mc/mc_10.16.2_lx2160a.itb
+/lib/firmware/dpaa2/mc/mc_10.18.0_ls1088a.itb
+/lib/firmware/dpaa2/mc/mc_10.18.0_ls2088a.itb
+/lib/firmware/dpaa2/mc/mc_10.18.0_lx2160a.itb
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
@@ -516,6 +519,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/i6050-fw-usb-*.sbcf
 /lib/firmware/i915
 /lib/firmware/imx
+%dir /lib/firmware/inside-secure/eip197_minifw
+/lib/firmware/inside-secure/eip197_minifw/ifpp.bin
+/lib/firmware/inside-secure/eip197_minifw/ipue.bin
 /lib/firmware/intel
 /lib/firmware/intelliport2.bin
 /lib/firmware/isci
@@ -602,6 +608,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values-8.30.12.0.bin
 /lib/firmware/qed/qed_init_values-8.33.12.0.bin
 /lib/firmware/qed/qed_init_values-8.37.7.0.bin
+/lib/firmware/qed/qed_init_values-8.40.33.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.10.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.10.5.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.15.3.0.bin
@@ -612,6 +619,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values_zipped-8.37.7.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.42.2.0.bin
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
@@ -636,6 +644,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
 %dir /lib/firmware/rtw88
+/lib/firmware/rtw88/rtw8723d_fw.bin
 /lib/firmware/rtw88/rtw8822b_fw.bin
 /lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
