@@ -519,6 +519,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/i6050-fw-usb-*.sbcf
 /lib/firmware/i915
 /lib/firmware/imx
+%dir /lib/firmware/inside-secure
 %dir /lib/firmware/inside-secure/eip197_minifw
 /lib/firmware/inside-secure/eip197_minifw/ifpp.bin
 /lib/firmware/inside-secure/eip197_minifw/ipue.bin
