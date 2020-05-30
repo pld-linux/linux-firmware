@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20200421
+%define		ver	20200519
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	229a93395f4033da68429f165a62b952
+# Source0-md5:	04968ac1bc835ca142359e28df4a901d
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -310,7 +310,7 @@ kart bezprzewodowych Intela typu iwl6050. Używanie firmware'u podlega
 warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl7260-firmware
-Summary:	Firmware for Intel(R) Wireless WiFi Link 726x/8000/9000 Series Adapters
+Summary:	Firmware for Intel(R) Wireless WiFi Link 726x/8000/9000/AX200/AX201 Series Adapters
 Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 726x/8000/9000
 Version:	25.228.9.0
 Release:	%{ver}.%{rel}
@@ -558,9 +558,14 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7650e.bin
 /lib/firmware/mediatek/mt7662u.bin
 /lib/firmware/mediatek/mt7662u_rom_patch.bin
+/lib/firmware/mediatek/mt7663_n9_rebb.bin
 /lib/firmware/mediatek/mt7663_n9_v3.bin
 /lib/firmware/mediatek/mt7663pr2h.bin
+/lib/firmware/mediatek/mt7663pr2h_rebb.bin
 /lib/firmware/mediatek/mt7668pr2h.bin
+/lib/firmware/mediatek/mt7915_rom_patch.bin
+/lib/firmware/mediatek/mt7915_wa.bin
+/lib/firmware/mediatek/mt7915_wm.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/meson
@@ -652,6 +657,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtlwifi
 %dir /lib/firmware/rtw88
 /lib/firmware/rtw88/rtw8723d_fw.bin
+/lib/firmware/rtw88/rtw8821c_fw.bin
 /lib/firmware/rtw88/rtw8822b_fw.bin
 /lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
@@ -777,8 +783,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-8265-*.ucode
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
-/lib/firmware/iwlwifi-Qu-*-b0-48.ucode
-/lib/firmware/iwlwifi-QuZ-a0-*-b0-48.ucode
+/lib/firmware/iwlwifi-Qu*.ucode
 /lib/firmware/iwlwifi-cc-a0-*.ucode
 
 %files -n libertas-sd8686-firmware
