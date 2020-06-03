@@ -311,7 +311,7 @@ warunkom opisanym w załączonym pliku LICENSE.
 
 %package -n iwl7260-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 726x/8000/9000/AX200/AX201 Series Adapters
-Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 726x/8000/9000
+Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 726x/8000/9000/AX200/AX201
 Version:	25.228.9.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
