@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20200519
+%define		ver	20200619
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	04968ac1bc835ca142359e28df4a901d
+# Source0-md5:	5ab419d7fc06e697585746c4d3bd7259
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -591,6 +591,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mrvl/usb8801_uapsta.bin
 /lib/firmware/mrvl/usb8897_uapsta.bin
 /lib/firmware/mrvl/usbusb8997_combo_v4.bin
+%dir /lib/firmware/mrvl/prestera
+/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v2.0.img
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
