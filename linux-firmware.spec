@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20200918
+%define		ver	20201022
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	3beea9477e12eeac67e5dd632d9501f2
+# Source0-md5:	519f94454c9bb2274daef6540d5e3cc2
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -478,6 +478,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ctspeq.bin
 /lib/firmware/cxgb3
 /lib/firmware/cxgb4
+/lib/firmware/cypress
 /lib/firmware/dabusb
 %dir /lib/firmware/dpaa2
 %dir /lib/firmware/dpaa2/mc
@@ -787,6 +788,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-Qu*.ucode
 /lib/firmware/iwlwifi-cc-a0-*.ucode
+/lib/firmware/iwlwifi-ty-a0-gf-a0-59.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
