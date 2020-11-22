@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20201022
+%define		ver	20201118
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	519f94454c9bb2274daef6540d5e3cc2
+# Source0-md5:	21b19f0253cc6d159b8f01bd50b9ee33
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -453,6 +453,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/as102_data1_st.hex
 /lib/firmware/as102_data2_st.hex
 /lib/firmware/ath10k
+/lib/firmware/ath11k
 /lib/firmware/ath3k-1.fw
 /lib/firmware/ath6k
 /lib/firmware/ath9k_htc
@@ -678,6 +679,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/sxg
 /lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
+/lib/firmware/ti
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
 /lib/firmware/ti-connectivity
