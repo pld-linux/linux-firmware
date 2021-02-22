@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20201118
+%define		ver	20210208
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	21b19f0253cc6d159b8f01bd50b9ee33
+# Source0-md5:	3f159789bd2b0d1abc2a564628b2e711
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -547,8 +547,11 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/libertas/sd8688*.bin
 /lib/firmware/libertas/usb8682.bin
 /lib/firmware/liquidio
+/lib/firmware/lt9611uxc_fw.bin
 /lib/firmware/matrox
 %dir /lib/firmware/mediatek
+/lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
+/lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin
 /lib/firmware/mediatek/mt7610e.bin
 /lib/firmware/mediatek/mt7610u.bin
 /lib/firmware/mediatek/mt7615_cr4.bin
