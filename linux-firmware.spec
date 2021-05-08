@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20210208
+%define		ver	20210315
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,11 +14,11 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	3f159789bd2b0d1abc2a564628b2e711
+# Source0-md5:	ef1a27912e8a11d41cd671879d9ffb6a
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Obsoletes:	microcode-data-amd
+Obsoletes:	microcode-data-amd < 20191221
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -93,7 +93,7 @@ Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
 Obsoletes:	iwl1000-firmware < 1:39.31.5.1-3
-Obsoletes:	iwlwifi-1000-ucode
+Obsoletes:	iwlwifi-1000-ucode < 1:39.31.5.1-2
 
 %description -n iwl1000-firmware
 This package contains the firmware required by the Intel wireless
@@ -166,7 +166,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	15.32.2.9
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-3945-ucode
+Obsoletes:	iwlwifi-3945-ucode < 15.32.2.9-2
 
 %description -n iwl3945-firmware
 This package contains the firmware required by the iwl3945 driver for
@@ -184,7 +184,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	228.61.2.24
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-4965-ucode
+Obsoletes:	iwlwifi-4965-ucode < 228.61.2.24-2
 
 %description -n iwl4965-firmware
 This package contains the firmware required by the iwl4965 driver for
@@ -202,7 +202,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	8.83.5.1_1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-5000-ucode
+Obsoletes:	iwlwifi-5000-ucode < 8.83.5.1-5
 
 %description -n iwl5000-firmware
 This package contains the firmware required by the Intel wireless
@@ -221,7 +221,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	8.24.2.2
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-5150-ucode
+Obsoletes:	iwlwifi-5150-ucode < 8.24.2.2-2
 
 %description -n iwl5150-firmware
 This package contains the firmware required by the Intel wireless
@@ -240,7 +240,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	9.221.4.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-6000-ucode
+Obsoletes:	iwlwifi-6000-ucode < 9.221.4.1-2
 
 %description -n iwl6000-firmware
 This package contains the firmware required by the Intel wireless
@@ -277,7 +277,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-6030-ucode
+Obsoletes:	iwlwifi-6030-ucode < 18.168.6.1-2
 
 %description -n iwl6000g2b-firmware
 This package contains the firmware required by the Intel wireless
@@ -296,7 +296,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	41.28.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-6050-ucode
+Obsoletes:	iwlwifi-6050-ucode < 41.28.5.1-2
 
 %description -n iwl6050-firmware
 This package contains the firmware required by the Intel wireless
@@ -315,7 +315,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 72
 Version:	25.228.9.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
-Obsoletes:	iwlwifi-7260-ucode
+Obsoletes:	iwlwifi-7260-ucode < 25.228.9.0-8
 Conflicts:	linux-firmware < 20181008-4
 
 %description -n iwl7260-firmware
@@ -550,6 +550,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/lt9611uxc_fw.bin
 /lib/firmware/matrox
 %dir /lib/firmware/mediatek
+/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin
 /lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
 /lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin
 /lib/firmware/mediatek/mt7610e.bin
@@ -668,6 +669,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw88/rtw8822b_fw.bin
 /lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
+%dir /lib/firmware/rtw89
+/lib/firmware/rtw89/rtw8852a_fw.bin
 # links to go7007/s2250*
 /lib/firmware/s2250*.fw
 /lib/firmware/s5p-mfc.fw
@@ -676,6 +679,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/s5p-mfc-v7.fw
 /lib/firmware/s5p-mfc-v8.fw
 /lib/firmware/sdd_sagrad_*.bin
+/lib/firmware/silabs
 /lib/firmware/slicoss
 /lib/firmware/sms1xxx-*.fw
 /lib/firmware/sun
@@ -793,7 +797,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-Qu*.ucode
 /lib/firmware/iwlwifi-cc-a0-*.ucode
-/lib/firmware/iwlwifi-ty-a0-gf-a0-59.ucode
+/lib/firmware/iwlwifi-ty-a0-gf-a0-*.ucode
+/lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
