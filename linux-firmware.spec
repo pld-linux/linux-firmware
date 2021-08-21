@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20210716
+%define		ver	20210818
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	d810749c625032490646a5d4eb21e1ee
+# Source0-md5:	5970dd0fce68407e9f4f3277a2889534
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -551,7 +551,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/matrox
 %dir /lib/firmware/mediatek
 /lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin
+/lib/firmware/mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin
 /lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
+/lib/firmware/mediatek/WIFI_RAM_CODE_MT7922_1.bin
 /lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin
 /lib/firmware/mediatek/mt7610e.bin
 /lib/firmware/mediatek/mt7610u.bin
