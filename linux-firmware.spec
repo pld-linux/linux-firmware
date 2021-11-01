@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20210818
+%define		ver	20211027
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	5970dd0fce68407e9f4f3277a2889534
+# Source0-md5:	44c6033a6ddafdd2880ef3d856ebdd76
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -481,20 +481,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/cxgb4
 /lib/firmware/cypress
 /lib/firmware/dabusb
-%dir /lib/firmware/dpaa2
-%dir /lib/firmware/dpaa2/mc
-/lib/firmware/dpaa2/mc/mc_10.10.0_ls1088a.itb
-/lib/firmware/dpaa2/mc/mc_10.10.0_ls2088a.itb
-/lib/firmware/dpaa2/mc/mc_10.10.0_lx2160a.itb
-/lib/firmware/dpaa2/mc/mc_10.14.3_ls1088a.itb
-/lib/firmware/dpaa2/mc/mc_10.14.3_ls2088a.itb
-/lib/firmware/dpaa2/mc/mc_10.14.3_lx2160a.itb
-/lib/firmware/dpaa2/mc/mc_10.16.2_ls1088a.itb
-/lib/firmware/dpaa2/mc/mc_10.16.2_ls2088a.itb
-/lib/firmware/dpaa2/mc/mc_10.16.2_lx2160a.itb
-/lib/firmware/dpaa2/mc/mc_10.18.0_ls1088a.itb
-/lib/firmware/dpaa2/mc/mc_10.18.0_ls2088a.itb
-/lib/firmware/dpaa2/mc/mc_10.18.0_lx2160a.itb
+/lib/firmware/dpaa2
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
@@ -550,6 +537,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/lt9611uxc_fw.bin
 /lib/firmware/matrox
 %dir /lib/firmware/mediatek
+/lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin
 /lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin
 /lib/firmware/mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin
 /lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
@@ -643,6 +631,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values_zipped-8.4.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.42.2.0.bin
+/lib/firmware/qed/qed_init_values_zipped-8.59.1.0.bin
 /lib/firmware/qlogic
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
@@ -800,6 +789,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-Qu*.ucode
 /lib/firmware/iwlwifi-cc-a0-*.ucode
+/lib/firmware/iwlwifi-so-a0-*.ucode
+/lib/firmware/iwlwifi-so-a0-gf-a0.pnvm
 /lib/firmware/iwlwifi-ty-a0-gf-a0-*.ucode
 /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
 
