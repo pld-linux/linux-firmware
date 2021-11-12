@@ -1,7 +1,7 @@
 # TODO
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
-%define		rel	1
+%define		rel	2
 %define		ver	20211027
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
@@ -18,6 +18,22 @@ Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Suggests:	%{name}-amd
+Suggests:	%{name}-atheros
+Suggests:	%{name}-broadcom
+Suggests:	%{name}-cavium
+Suggests:	%{name}-chelsio
+Suggests:	%{name}-intel
+Suggests:	%{name}-marvell
+Suggests:	%{name}-mediatek
+Suggests:	%{name}-mellanox
+Suggests:	%{name}-netronome
+Suggests:	%{name}-nvidia
+Suggests:	%{name}-nxp
+Suggests:	%{name}-qlogic
+Suggests:	%{name}-qualcomm
+Suggests:	%{name}-realtek
+Suggests:	%{name}-ti
 Obsoletes:	microcode-data-amd < 20191221
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,6 +47,166 @@ operate.
 %description -l pl.UTF-8
 Ten pakiet zawiera pliki firmware'u wymagane do działania niektórych
 urządzeń.
+
+%package amd
+Summary:	Firmware for AMD devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy AMD
+
+%description amd
+Firmware for AMD devices.
+
+%description amd -l pl.UTF-8
+Firmware dla urządzeń firmy AMD.
+
+%package atheros
+Summary:	Firmware for Atheros devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Atheros
+
+%description atheros
+Firmware for Atheros devices.
+
+%description atheros -l pl.UTF-8
+Firmware dla urządzeń firmy Atheros.
+
+%package broadcom
+Summary:	Firmware for Broadcom devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Broadcom
+
+%description broadcom
+Firmware for Broadcom devices.
+
+%description broadcom -l pl.UTF-8
+Firmware dla urządzeń firmy Broadcom.
+
+%package cavium
+Summary:	Firmware for Cavium devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Cavium
+
+%description cavium
+Firmware for Cavium devices.
+
+%description cavium -l pl.UTF-8
+Firmware dla urządzeń firmy Cavium.
+
+%package chelsio
+Summary:	Firmware for Chelsio devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Chelsio
+
+%description chelsio
+Firmware for Chelsio devices.
+
+%description chelsio -l pl.UTF-8
+Firmware dla urządzeń firmy Chelsio.
+
+%package intel
+Summary:	Firmware for Intel devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Intel
+
+%description intel
+Firmware for Intel devices.
+
+%description intel -l pl.UTF-8
+Firmware dla urządzeń firmy Intel.
+
+%package marvell
+Summary:	Firmware for Marvell devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Marvell
+
+%description marvell
+Firmware for Marvell devices.
+
+%description marvell -l pl.UTF-8
+Firmware dla urządzeń firmy Marvell.
+
+%package mediatek
+Summary:	Firmware for MediaTek devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy MediaTek
+
+%description mediatek
+Firmware for MediaTek devices.
+
+%description mediatek -l pl.UTF-8
+Firmware dla urządzeń firmy MediaTek.
+
+%package mellanox
+Summary:	Firmware for Mellanox devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Mellanox
+
+%description mellanox
+Firmware for Mellanox devices.
+
+%description mellanox -l pl.UTF-8
+Firmware dla urządzeń firmy Mellanox.
+
+%package netronome
+Summary:	Firmware for Netronome devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Netronome
+
+%description netronome
+Firmware for Netronome devices.
+
+%description netronome -l pl.UTF-8
+Firmware dla urządzeń firmy Netronome.
+
+%package nvidia
+Summary:	Firmware for NVIDIA devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy NVIDIA
+
+%description nvidia
+Firmware for NVIDIA devices.
+
+%description nvidia -l pl.UTF-8
+Firmware dla urządzeń firmy NVIDIA.
+
+%package nxp
+Summary:	Firmware for NXP devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy NXP
+
+%description nxp
+Firmware for NXP devices.
+
+%description nxp -l pl.UTF-8
+Firmware dla urządzeń firmy NXP.
+
+%package qlogic
+Summary:	Firmware for QLogic devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy QLogic
+
+%description qlogic
+Firmware for QLogic devices.
+
+%description qlogic -l pl.UTF-8
+Firmware dla urządzeń firmy QLogic.
+
+%package qualcomm
+Summary:	Firmware for Qualcomm devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Qualcomm
+
+%description qualcomm
+Firmware for Qualcomm devices.
+
+%description qualcomm -l pl.UTF-8
+Firmware dla urządzeń firmy Qualcomm.
+
+%package realtek
+Summary:	Firmware for Realtek devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Realtek
+
+%description realtek
+Firmware for Realtek devices.
+
+%description realtek -l pl.UTF-8
+Firmware dla urządzeń firmy Realtek.
+
+%package ti
+Summary:	Firmware for Texas Instruments devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy Texas Instruments
+
+%description ti
+Firmware for Texas Instruments devices.
+
+%description ti -l pl.UTF-8
+Firmware dla urządzeń firmy Texas Instruments.
 
 %package -n iwl100-firmware
 Summary:	Firmware for Intel(R) Wireless WiFi Link 100 Series Adapters
@@ -432,56 +608,27 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.* LICENSE.* README README.rtw88 TDA7706_OM_v*_boot.txt
+%doc WHENCE LICENCE.* LICENSE.* README TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
 /lib/firmware/TDA7706_OM_v*_boot.txt
-# links to qcom/a300_*.fw
-/lib/firmware/a300_pfp.fw
-/lib/firmware/a300_pm4.fw
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
-/lib/firmware/amd
-/lib/firmware/amdgpu
-/lib/firmware/amd-ucode
-/lib/firmware/ar3k
-/lib/firmware/ar5523.bin
-/lib/firmware/ar7010*.fw
-/lib/firmware/ar9170-*.fw
-/lib/firmware/ar9271.fw
+%dir /lib/firmware/ar3k
 /lib/firmware/as102_data1_st.hex
 /lib/firmware/as102_data2_st.hex
-/lib/firmware/ath10k
-/lib/firmware/ath11k
-/lib/firmware/ath3k-1.fw
-/lib/firmware/ath6k
-/lib/firmware/ath9k_htc
 /lib/firmware/atmel
 /lib/firmware/atmsar11.fw
 /lib/firmware/atusb
 /lib/firmware/av7110
-/lib/firmware/bnx2
-/lib/firmware/bnx2x
-/lib/firmware/bnx2x-e1-*.fw
-/lib/firmware/bnx2x-e1h-*.fw
-/lib/firmware/brcm
 /lib/firmware/cadence
-/lib/firmware/carl9170-1.fw
-/lib/firmware/cavium
-/lib/firmware/cbfw-*.bin
 /lib/firmware/cis
 /lib/firmware/cmmb_*_12mhz.inp
 /lib/firmware/cpia2
-/lib/firmware/ct2fw-*.bin
 /lib/firmware/ctefx.bin
-/lib/firmware/ctfw-*.bin
 /lib/firmware/ctspeq.bin
-/lib/firmware/cxgb3
-/lib/firmware/cxgb4
-/lib/firmware/cypress
 /lib/firmware/dabusb
-/lib/firmware/dpaa2
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
@@ -491,37 +638,194 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/dvb-usb-it9135-01.fw
 /lib/firmware/dvb-usb-it9135-02.fw
 /lib/firmware/dvb-usb-terratec-h5-drxk.fw
-/lib/firmware/e100
 /lib/firmware/edgeport
 /lib/firmware/emi26
 /lib/firmware/emi62
 /lib/firmware/ene-ub6250
 /lib/firmware/f2255usb.bin
 /lib/firmware/go7007
-/lib/firmware/hfi1_dc8051.fw
-/lib/firmware/hfi1_fabric.fw
-/lib/firmware/hfi1_pcie.fw
-/lib/firmware/hfi1_sbus.fw
-/lib/firmware/htc_7010.fw
-/lib/firmware/htc_9271.fw
-/lib/firmware/i2400m-fw-usb-*.sbcf
-/lib/firmware/i6050-fw-usb-*.sbcf
-/lib/firmware/i915
 /lib/firmware/imx
 %dir /lib/firmware/inside-secure
 %dir /lib/firmware/inside-secure/eip197_minifw
 /lib/firmware/inside-secure/eip197_minifw/ifpp.bin
 /lib/firmware/inside-secure/eip197_minifw/ipue.bin
-/lib/firmware/intel
 /lib/firmware/intelliport2.bin
-/lib/firmware/isci
 /lib/firmware/isdbt_*.inp
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
-/lib/firmware/lbtf_usb.bin
 /lib/firmware/lgs8g75.fw
 %dir /lib/firmware/libertas
+/lib/firmware/lt9611uxc_fw.bin
+/lib/firmware/matrox
+/lib/firmware/meson
+%dir /lib/firmware/microchip
+/lib/firmware/microchip/mscc_vsc8574_revb_int8051_29e8.bin
+/lib/firmware/microchip/mscc_vsc8584_revb_int8051_fb48.bin
+/lib/firmware/moxa
+%dir /lib/firmware/mrvl
+/lib/firmware/mts_*.fw
+/lib/firmware/myri10ge_*.dat
+/lib/firmware/myricom
+/lib/firmware/ositech
+/lib/firmware/r128
+/lib/firmware/r8a779x_usb3_v1.dlmem
+/lib/firmware/r8a779x_usb3_v2.dlmem
+/lib/firmware/r8a779x_usb3_v3.dlmem
+%dir /lib/firmware/rockchip
+/lib/firmware/rockchip/dptx.bin
+/lib/firmware/rp2.fw
+/lib/firmware/rsi
+/lib/firmware/rsi_91x.fw
+/lib/firmware/rt2860.bin
+/lib/firmware/rt2870.bin
+# link to rt2870.bin
+/lib/firmware/rt3070.bin
+/lib/firmware/rt3071.bin
+# link to rt2860.bin
+/lib/firmware/rt3090.bin
+/lib/firmware/rt3290.bin
+# links to go7007/s2250*
+/lib/firmware/s2250*.fw
+/lib/firmware/s5p-mfc.fw
+/lib/firmware/s5p-mfc-v6.fw
+/lib/firmware/s5p-mfc-v6-v2.fw
+/lib/firmware/s5p-mfc-v7.fw
+/lib/firmware/s5p-mfc-v8.fw
+/lib/firmware/sdd_sagrad_*.bin
+/lib/firmware/silabs
+/lib/firmware/slicoss
+/lib/firmware/sms1xxx-*.fw
+/lib/firmware/sun
+/lib/firmware/sxg
+/lib/firmware/tdmb_nova_12mhz.inp
+/lib/firmware/tehuti
+/lib/firmware/tlg2300_firmware.bin
+/lib/firmware/tr_smctr.bin
+/lib/firmware/ttusb-budget
+/lib/firmware/ueagle-atm
+/lib/firmware/usbdux*_firmware.bin
+/lib/firmware/v4l-cx*.fw
+/lib/firmware/vicam
+/lib/firmware/vntwusb.fw
+/lib/firmware/vxge
+/lib/firmware/whiteheat*.fw
+/lib/firmware/wsm_22.bin
+/lib/firmware/yam
+
+%files amd
+%defattr(644,root,root,755)
+%doc WHENCE LICENSE.amdgpu LICENSE.amd-sev LICENSE.amd-ucode LICENSE.radeon
+/lib/firmware/amd
+/lib/firmware/amdgpu
+/lib/firmware/amd-ucode
+/lib/firmware/radeon
+
+%files atheros
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.atheros_firmware
+/lib/firmware/ar3k/1020200
+/lib/firmware/ar3k/1020201
+/lib/firmware/ar3k/30000
+/lib/firmware/ar3k/30101
+/lib/firmware/ar3k/30101coex
+/lib/firmware/ar3k/AthrBT_0x01020001.dfu
+/lib/firmware/ar3k/AthrBT_0x01020200.dfu
+/lib/firmware/ar3k/AthrBT_0x11020000.dfu
+/lib/firmware/ar3k/AthrBT_0x11020100.dfu
+/lib/firmware/ar3k/AthrBT_0x31010000.dfu
+/lib/firmware/ar3k/AthrBT_0x31010100.dfu
+/lib/firmware/ar3k/AthrBT_0x41020000.dfu
+/lib/firmware/ar3k/ramps_0x01020001_26.dfu
+/lib/firmware/ar3k/ramps_0x01020200_26.dfu
+/lib/firmware/ar3k/ramps_0x01020200_40.dfu
+/lib/firmware/ar3k/ramps_0x01020201_26.dfu
+/lib/firmware/ar3k/ramps_0x01020201_40.dfu
+/lib/firmware/ar3k/ramps_0x11020000_40.dfu
+/lib/firmware/ar3k/ramps_0x11020100_40.dfu
+/lib/firmware/ar3k/ramps_0x31010000_40.dfu
+/lib/firmware/ar3k/ramps_0x31010100_40.dfu
+/lib/firmware/ar3k/ramps_0x41020000_40.dfu
+/lib/firmware/ar5523.bin
+/lib/firmware/ar7010*.fw
+/lib/firmware/ar9170-*.fw
+/lib/firmware/ar9271.fw
+/lib/firmware/ath3k-1.fw
+/lib/firmware/ath6k
+/lib/firmware/carl9170-1.fw
+/lib/firmware/htc_7010.fw
+/lib/firmware/htc_9271.fw
+
+%files broadcom
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.broadcom_bcm43xx
+/lib/firmware/bnx2
+/lib/firmware/bnx2x
+/lib/firmware/bnx2x-e1-*.fw
+/lib/firmware/bnx2x-e1h-*.fw
+/lib/firmware/brcm
+/lib/firmware/cypress
+/lib/firmware/tigon
+
+%files cavium
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.cavium LICENCE.cavium_liquidio
+/lib/firmware/cavium
+/lib/firmware/liquidio
+
+%files chelsio
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.chelsio_firmware
+/lib/firmware/cxgb3
+/lib/firmware/cxgb4
+
+%files intel
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.e100 LICENCE.i2400m LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced
+/lib/firmware/e100
+/lib/firmware/hfi1_dc8051.fw
+/lib/firmware/hfi1_fabric.fw
+/lib/firmware/hfi1_pcie.fw
+/lib/firmware/hfi1_sbus.fw
+/lib/firmware/i2400m-fw-usb-*.sbcf
+/lib/firmware/i6050-fw-usb-*.sbcf
+/lib/firmware/i915
+/lib/firmware/intel
+/lib/firmware/isci
+/lib/firmware/qat_895xcc.bin
+/lib/firmware/qat_895xcc_mmp.bin
+/lib/firmware/qat_c3xxx.bin
+/lib/firmware/qat_c3xxx_mmp.bin
+/lib/firmware/qat_c62x.bin
+/lib/firmware/qat_c62x_mmp.bin
+# link to qat_895xcc_mmp.bin
+/lib/firmware/qat_mmp.bin
+
+%files marvell
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.Marvell LICENCE.OLPC
+/lib/firmware/lbtf_usb.bin
+/lib/firmware/mwl8k
+/lib/firmware/mwlwifi
+/lib/firmware/mrvl/pcie8897_uapsta.bin
+/lib/firmware/mrvl/pcie8997_wlan_v4.bin
+/lib/firmware/mrvl/pcieuart8997_combo_v4.bin
+/lib/firmware/mrvl/pcieusb8997_combo_v4.bin
+/lib/firmware/mrvl/sd8688*.bin
+/lib/firmware/mrvl/sd8797_uapsta.bin
+/lib/firmware/mrvl/sd8801_uapsta.bin
+/lib/firmware/mrvl/sd8887_uapsta.bin
+/lib/firmware/mrvl/sd8897_uapsta.bin
+/lib/firmware/mrvl/sdsd8977_combo_v2.bin
+/lib/firmware/mrvl/sdsd8997_combo_v4.bin
+/lib/firmware/mrvl/usb8766_uapsta.bin
+/lib/firmware/mrvl/usb8797_uapsta.bin
+/lib/firmware/mrvl/usb8801_uapsta.bin
+/lib/firmware/mrvl/usb8897_uapsta.bin
+/lib/firmware/mrvl/usbusb8997_combo_v4.bin
+%dir /lib/firmware/mrvl/prestera
+/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v2.0.img
+/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v3.0.img
 /lib/firmware/libertas/cf8381*.bin
 /lib/firmware/libertas/cf8385*.bin
 /lib/firmware/libertas/gspi8682*.bin
@@ -533,9 +837,10 @@ rm -rf $RPM_BUILD_ROOT
 # links to mrvl/sd8688*
 /lib/firmware/libertas/sd8688*.bin
 /lib/firmware/libertas/usb8682.bin
-/lib/firmware/liquidio
-/lib/firmware/lt9611uxc_fw.bin
-/lib/firmware/matrox
+
+%files mediatek
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.ralink_a_mediatek_company_firmware LICENCE.mediatek
 %dir /lib/firmware/mediatek
 /lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin
 /lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin
@@ -564,53 +869,38 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7915_wm.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
-/lib/firmware/meson
-%dir /lib/firmware/microchip
-/lib/firmware/microchip/mscc_vsc8574_revb_int8051_29e8.bin
-/lib/firmware/microchip/mscc_vsc8584_revb_int8051_fb48.bin
-/lib/firmware/mellanox
-/lib/firmware/moxa
-%dir /lib/firmware/mrvl
-/lib/firmware/mrvl/pcie8897_uapsta.bin
-/lib/firmware/mrvl/pcie8997_wlan_v4.bin
-/lib/firmware/mrvl/pcieuart8997_combo_v4.bin
-/lib/firmware/mrvl/pcieusb8997_combo_v4.bin
-/lib/firmware/mrvl/sd8688*.bin
-/lib/firmware/mrvl/sd8797_uapsta.bin
-/lib/firmware/mrvl/sd8801_uapsta.bin
-/lib/firmware/mrvl/sd8887_uapsta.bin
-/lib/firmware/mrvl/sd8897_uapsta.bin
-/lib/firmware/mrvl/sdsd8977_combo_v2.bin
-/lib/firmware/mrvl/sdsd8997_combo_v4.bin
-/lib/firmware/mrvl/usb8766_uapsta.bin
-/lib/firmware/mrvl/usb8797_uapsta.bin
-/lib/firmware/mrvl/usb8801_uapsta.bin
-/lib/firmware/mrvl/usb8897_uapsta.bin
-/lib/firmware/mrvl/usbusb8997_combo_v4.bin
-%dir /lib/firmware/mrvl/prestera
-/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v2.0.img
-/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v3.0.img
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
-/lib/firmware/mts_*.fw
-/lib/firmware/mwl8k
-/lib/firmware/mwlwifi
-/lib/firmware/myri10ge_*.dat
-/lib/firmware/myricom
+/lib/firmware/vpu_d.bin
+/lib/firmware/vpu_p.bin
+
+%files mellanox
+%defattr(644,root,root,755)
+%doc WHENCE
+/lib/firmware/mellanox
+
+%files netronome
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.Netronome
 /lib/firmware/netronome
+
+%files nvidia
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.nvidia
 /lib/firmware/nvidia
-/lib/firmware/ositech
-/lib/firmware/qat_895xcc.bin
-/lib/firmware/qat_895xcc_mmp.bin
-/lib/firmware/qat_c3xxx.bin
-/lib/firmware/qat_c3xxx_mmp.bin
-/lib/firmware/qat_c62x.bin
-/lib/firmware/qat_c62x_mmp.bin
-# link to qat_895xcc_mmp.bin
-/lib/firmware/qat_mmp.bin
-/lib/firmware/qca
-/lib/firmware/qcom
+
+%files nxp
+%defattr(644,root,root,755)
+%doc WHENCE LICENSE.nxp_mc_firmware
+/lib/firmware/dpaa2
+
+%files qlogic
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.qla1280
+/lib/firmware/cbfw-*.bin
+/lib/firmware/ct2fw-*.bin
+/lib/firmware/ctfw-*.bin
 %dir /lib/firmware/qed
 /lib/firmware/qed/qed_init_values-8.10.9.0.bin
 /lib/firmware/qed/qed_init_values-8.14.6.0.bin
@@ -633,24 +923,26 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qed/qed_init_values_zipped-8.42.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.59.1.0.bin
 /lib/firmware/qlogic
-/lib/firmware/r128
-/lib/firmware/r8a779x_usb3_v1.dlmem
-/lib/firmware/r8a779x_usb3_v2.dlmem
-/lib/firmware/r8a779x_usb3_v3.dlmem
-/lib/firmware/radeon
-%dir /lib/firmware/rockchip
-/lib/firmware/rockchip/dptx.bin
-/lib/firmware/rp2.fw
-/lib/firmware/rsi
-/lib/firmware/rsi_91x.fw
-/lib/firmware/rt2860.bin
-/lib/firmware/rt2870.bin
-# link to rt2870.bin
-/lib/firmware/rt3070.bin
-/lib/firmware/rt3071.bin
-# link to rt2860.bin
-/lib/firmware/rt3090.bin
-/lib/firmware/rt3290.bin
+
+%files qualcomm
+%defattr(644,root,root,755)
+%doc WHENCE LICENSE.QualcommAtheros_ar3k LICENSE.QualcommAtheros_ath10k LICENCE.open-ath9k-htc-firmware LICENSE.qcom
+# links to qcom/a300_*.fw
+/lib/firmware/a300_pfp.fw
+/lib/firmware/a300_pm4.fw
+/lib/firmware/ar3k/1020201coex
+/lib/firmware/ar3k/AthrBT_0x01020201.dfu
+/lib/firmware/ath10k
+/lib/firmware/ath11k
+/lib/firmware/ath9k_htc
+/lib/firmware/qca
+/lib/firmware/qcom
+/lib/firmware/wil6210.brd
+/lib/firmware/wil6210.fw
+
+%files realtek
+%defattr(644,root,root,755)
+%doc WHENCE README.rtw88 LICENCE.rtlwifi_firmware.txt
 /lib/firmware/RTL8192E
 /lib/firmware/rtl_bt
 /lib/firmware/rtl_nic
@@ -663,43 +955,15 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
 %dir /lib/firmware/rtw89
 /lib/firmware/rtw89/rtw8852a_fw.bin
-# links to go7007/s2250*
-/lib/firmware/s2250*.fw
-/lib/firmware/s5p-mfc.fw
-/lib/firmware/s5p-mfc-v6.fw
-/lib/firmware/s5p-mfc-v6-v2.fw
-/lib/firmware/s5p-mfc-v7.fw
-/lib/firmware/s5p-mfc-v8.fw
-/lib/firmware/sdd_sagrad_*.bin
-/lib/firmware/silabs
-/lib/firmware/slicoss
-/lib/firmware/sms1xxx-*.fw
-/lib/firmware/sun
-/lib/firmware/sxg
-/lib/firmware/tdmb_nova_12mhz.inp
-/lib/firmware/tehuti
+
+%files ti
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.ti-tspa LICENCE.wl1251 LICENCE.ti-connectivity LICENCE.ti-keystone
 /lib/firmware/ti
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
 /lib/firmware/ti-connectivity
-/lib/firmware/tigon
 /lib/firmware/ti-keystone
-/lib/firmware/tlg2300_firmware.bin
-/lib/firmware/tr_smctr.bin
-/lib/firmware/ttusb-budget
-/lib/firmware/ueagle-atm
-/lib/firmware/usbdux*_firmware.bin
-/lib/firmware/v4l-cx*.fw
-/lib/firmware/vicam
-/lib/firmware/vntwusb.fw
-/lib/firmware/vpu_d.bin
-/lib/firmware/vpu_p.bin
-/lib/firmware/vxge
-/lib/firmware/whiteheat*.fw
-/lib/firmware/wil6210.brd
-/lib/firmware/wil6210.fw
-/lib/firmware/wsm_22.bin
-/lib/firmware/yam
 
 %files -n iwl100-firmware
 %defattr(644,root,root,755)
