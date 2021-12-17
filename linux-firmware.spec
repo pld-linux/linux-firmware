@@ -1,8 +1,8 @@
 # TODO
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
-%define		rel	2
-%define		ver	20211027
+%define		rel	1
+%define		ver	20211216
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	44c6033a6ddafdd2880ef3d856ebdd76
+# Source0-md5:	64c8c57500182ced73b20f4529270ad9
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -826,6 +826,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir /lib/firmware/mrvl/prestera
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v2.0.img
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v3.0.img
+/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v4.0.img
 /lib/firmware/libertas/cf8381*.bin
 /lib/firmware/libertas/cf8385*.bin
 /lib/firmware/libertas/gspi8682*.bin
@@ -1055,6 +1056,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-cc-a0-*.ucode
 /lib/firmware/iwlwifi-so-a0-*.ucode
 /lib/firmware/iwlwifi-so-a0-gf-a0.pnvm
+/lib/firmware/iwlwifi-so-a0-gf4-a0.pnvm
 /lib/firmware/iwlwifi-ty-a0-gf-a0-*.ucode
 /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
 
