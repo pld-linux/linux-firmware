@@ -18,23 +18,22 @@ Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Suggests:	%{name}-amd
-Suggests:	%{name}-atheros
-Suggests:	%{name}-broadcom
-Suggests:	%{name}-cavium
-Suggests:	%{name}-chelsio
-Suggests:	%{name}-intel
-Suggests:	%{name}-marvell
-Suggests:	%{name}-mediatek
-Suggests:	%{name}-mellanox
-Suggests:	%{name}-netronome
-Suggests:	%{name}-nvidia
-Suggests:	%{name}-nxp
-Suggests:	%{name}-qlogic
-Suggests:	%{name}-qualcomm
-Suggests:	%{name}-realtek
-Suggests:	%{name}-ti
-Obsoletes:	microcode-data-amd < 20191221
+Suggests:	%{name}-amd = %{ver}-%{rel}
+Suggests:	%{name}-atheros = %{ver}-%{rel}
+Suggests:	%{name}-broadcom = %{ver}-%{rel}
+Suggests:	%{name}-cavium = %{ver}-%{rel}
+Suggests:	%{name}-chelsio = %{ver}-%{rel}
+Suggests:	%{name}-intel = %{ver}-%{rel}
+Suggests:	%{name}-marvell = %{ver}-%{rel}
+Suggests:	%{name}-mediatek = %{ver}-%{rel}
+Suggests:	%{name}-mellanox = %{ver}-%{rel}
+Suggests:	%{name}-netronome = %{ver}-%{rel}
+Suggests:	%{name}-nvidia = %{ver}-%{rel}
+Suggests:	%{name}-nxp = %{ver}-%{rel}
+Suggests:	%{name}-qlogic = %{ver}-%{rel}
+Suggests:	%{name}-qualcomm = %{ver}-%{rel}
+Suggests:	%{name}-realtek = %{ver}-%{rel}
+Suggests:	%{name}-ti = %{ver}-%{rel}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,6 +50,7 @@ urządzeń.
 %package amd
 Summary:	Firmware for AMD devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy AMD
+Obsoletes:	microcode-data-amd < 20191221
 
 %description amd
 Firmware for AMD devices.
