@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20211216
+%define		ver	20220209
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	64c8c57500182ced73b20f4529270ad9
+# Source0-md5:	6df551e28b7e71b569d04a9d5b93000a
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -38,6 +38,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		no_install_post_strip	1
+%define		_enable_debug_packages	0
 
 %description
 This package includes firmware files required for some devices to
@@ -615,6 +616,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
+/lib/firmware/amphion
 %dir /lib/firmware/ar3k
 /lib/firmware/as102_data1_st.hex
 /lib/firmware/as102_data2_st.hex
@@ -625,6 +627,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/cadence
 /lib/firmware/cis
 /lib/firmware/cmmb_*_12mhz.inp
+/lib/firmware/cnm
 /lib/firmware/cpia2
 /lib/firmware/ctefx.bin
 /lib/firmware/ctspeq.bin
@@ -823,6 +826,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mrvl/usb8801_uapsta.bin
 /lib/firmware/mrvl/usb8897_uapsta.bin
 /lib/firmware/mrvl/usbusb8997_combo_v4.bin
+/lib/firmware/mrvl/cpt01
+/lib/firmware/mrvl/cpt02
+/lib/firmware/mrvl/cpt03
+/lib/firmware/mrvl/cpt04
 %dir /lib/firmware/mrvl/prestera
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v2.0.img
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v3.0.img
@@ -865,9 +872,15 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7663pr2h.bin
 /lib/firmware/mediatek/mt7663pr2h_rebb.bin
 /lib/firmware/mediatek/mt7668pr2h.bin
+/lib/firmware/mediatek/mt7915_eeprom.bin
+/lib/firmware/mediatek/mt7915_eeprom_dbdc.bin
 /lib/firmware/mediatek/mt7915_rom_patch.bin
 /lib/firmware/mediatek/mt7915_wa.bin
 /lib/firmware/mediatek/mt7915_wm.bin
+/lib/firmware/mediatek/mt7916_eeprom.bin
+/lib/firmware/mediatek/mt7916_rom_patch.bin
+/lib/firmware/mediatek/mt7916_wa.bin
+/lib/firmware/mediatek/mt7916_wm.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/mt7601u.bin
