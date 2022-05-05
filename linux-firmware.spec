@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20220209
+%define		ver	20220411
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	6df551e28b7e71b569d04a9d5b93000a
+# Source0-md5:	0b53e9bea4cea6b9d7db627a11d5077a
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -696,7 +696,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/s5p-mfc-v7.fw
 /lib/firmware/s5p-mfc-v8.fw
 /lib/firmware/sdd_sagrad_*.bin
-/lib/firmware/silabs
 /lib/firmware/slicoss
 /lib/firmware/sms1xxx-*.fw
 /lib/firmware/sun
@@ -712,6 +711,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/vicam
 /lib/firmware/vntwusb.fw
 /lib/firmware/vxge
+/lib/firmware/wfx
 /lib/firmware/whiteheat*.fw
 /lib/firmware/wsm_22.bin
 /lib/firmware/yam
@@ -881,6 +881,15 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7916_rom_patch.bin
 /lib/firmware/mediatek/mt7916_wa.bin
 /lib/firmware/mediatek/mt7916_wm.bin
+/lib/firmware/mediatek/mt7986_eeprom_mt7975_dual.bin
+/lib/firmware/mediatek/mt7986_eeprom_mt7976.bin
+/lib/firmware/mediatek/mt7986_eeprom_mt7976_dbdc.bin
+/lib/firmware/mediatek/mt7986_eeprom_mt7976_dual.bin
+/lib/firmware/mediatek/mt7986_rom_patch.bin
+/lib/firmware/mediatek/mt7986_rom_patch_mt7975.bin
+/lib/firmware/mediatek/mt7986_wa.bin
+/lib/firmware/mediatek/mt7986_wm.bin
+/lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/mt7601u.bin
