@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20220411
+%define		ver	20220610
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	0b53e9bea4cea6b9d7db627a11d5077a
+# Source0-md5:	4dbd7a85dcd3712952dc0c6edf7a629c
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -39,6 +39,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		no_install_post_strip	1
 %define		_enable_debug_packages	0
+%define		_noautochrpath		.*/lib/firmware/.*
 
 %description
 This package includes firmware files required for some devices to
@@ -892,6 +893,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
+/lib/firmware/mediatek/mt8192
+/lib/firmware/mediatek/mt8195
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
@@ -978,6 +981,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
 %dir /lib/firmware/rtw89
 /lib/firmware/rtw89/rtw8852a_fw.bin
+/lib/firmware/rtw89/rtw8852c_fw.bin
 
 %files ti
 %defattr(644,root,root,755)
