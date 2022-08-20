@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20220610
+%define		ver	20220815
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	4dbd7a85dcd3712952dc0c6edf7a629c
+# Source0-md5:	a10fae34e085810817822110d05aeb75
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -610,9 +610,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.* LICENSE.* README TDA7706_OM_v*_boot.txt
+%doc WHENCE LICENCE.* LICENSE.* README
+# TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
-/lib/firmware/TDA7706_OM_v*_boot.txt
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
@@ -622,10 +622,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/as102_data1_st.hex
 /lib/firmware/as102_data2_st.hex
 /lib/firmware/atmel
-/lib/firmware/atmsar11.fw
 /lib/firmware/atusb
 /lib/firmware/av7110
 /lib/firmware/cadence
+/lib/firmware/cirrus
 /lib/firmware/cis
 /lib/firmware/cmmb_*_12mhz.inp
 /lib/firmware/cnm
@@ -653,7 +653,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir /lib/firmware/inside-secure/eip197_minifw
 /lib/firmware/inside-secure/eip197_minifw/ifpp.bin
 /lib/firmware/inside-secure/eip197_minifw/ipue.bin
-/lib/firmware/intelliport2.bin
 /lib/firmware/isdbt_*.inp
 /lib/firmware/kaweth
 /lib/firmware/keyspan
@@ -704,7 +703,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
 /lib/firmware/tlg2300_firmware.bin
-/lib/firmware/tr_smctr.bin
 /lib/firmware/ttusb-budget
 /lib/firmware/ueagle-atm
 /lib/firmware/usbdux*_firmware.bin
@@ -765,8 +763,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENCE.broadcom_bcm43xx
 /lib/firmware/bnx2
 /lib/firmware/bnx2x
-/lib/firmware/bnx2x-e1-*.fw
-/lib/firmware/bnx2x-e1h-*.fw
 /lib/firmware/brcm
 /lib/firmware/cypress
 /lib/firmware/tigon
@@ -785,14 +781,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files intel
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.e100 LICENCE.i2400m LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced
+%doc WHENCE LICENCE.e100 LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced
 /lib/firmware/e100
 /lib/firmware/hfi1_dc8051.fw
 /lib/firmware/hfi1_fabric.fw
 /lib/firmware/hfi1_pcie.fw
 /lib/firmware/hfi1_sbus.fw
-/lib/firmware/i2400m-fw-usb-*.sbcf
-/lib/firmware/i6050-fw-usb-*.sbcf
 /lib/firmware/i915
 /lib/firmware/intel
 /lib/firmware/isci
@@ -893,8 +887,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
+/lib/firmware/mediatek/mt8186
 /lib/firmware/mediatek/mt8192
 /lib/firmware/mediatek/mt8195
+/lib/firmware/mediatek/sof
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
