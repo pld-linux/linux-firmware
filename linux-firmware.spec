@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20220913
+%define		ver	20221214
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	268dc0757ed7d0dd2cabbd3a645d3012
+# Source0-md5:	b06349f3de9deda29b743cd7bdeb12aa
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -52,6 +52,7 @@ urządzeń.
 %package amd
 Summary:	Firmware for AMD devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy AMD
+Group:		Base/Kernel
 Obsoletes:	microcode-data-amd < 20191221
 
 %description amd
@@ -63,6 +64,7 @@ Firmware dla urządzeń firmy AMD.
 %package atheros
 Summary:	Firmware for Atheros devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Atheros
+Group:		Base/Kernel
 
 %description atheros
 Firmware for Atheros devices.
@@ -73,6 +75,7 @@ Firmware dla urządzeń firmy Atheros.
 %package broadcom
 Summary:	Firmware for Broadcom devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Broadcom
+Group:		Base/Kernel
 
 %description broadcom
 Firmware for Broadcom devices.
@@ -83,6 +86,7 @@ Firmware dla urządzeń firmy Broadcom.
 %package cavium
 Summary:	Firmware for Cavium devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Cavium
+Group:		Base/Kernel
 
 %description cavium
 Firmware for Cavium devices.
@@ -93,6 +97,7 @@ Firmware dla urządzeń firmy Cavium.
 %package chelsio
 Summary:	Firmware for Chelsio devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Chelsio
+Group:		Base/Kernel
 
 %description chelsio
 Firmware for Chelsio devices.
@@ -103,6 +108,7 @@ Firmware dla urządzeń firmy Chelsio.
 %package intel
 Summary:	Firmware for Intel devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Intel
+Group:		Base/Kernel
 
 %description intel
 Firmware for Intel devices.
@@ -113,6 +119,7 @@ Firmware dla urządzeń firmy Intel.
 %package marvell
 Summary:	Firmware for Marvell devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Marvell
+Group:		Base/Kernel
 
 %description marvell
 Firmware for Marvell devices.
@@ -123,6 +130,7 @@ Firmware dla urządzeń firmy Marvell.
 %package mediatek
 Summary:	Firmware for MediaTek devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy MediaTek
+Group:		Base/Kernel
 
 %description mediatek
 Firmware for MediaTek devices.
@@ -133,6 +141,7 @@ Firmware dla urządzeń firmy MediaTek.
 %package mellanox
 Summary:	Firmware for Mellanox devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Mellanox
+Group:		Base/Kernel
 
 %description mellanox
 Firmware for Mellanox devices.
@@ -143,6 +152,7 @@ Firmware dla urządzeń firmy Mellanox.
 %package netronome
 Summary:	Firmware for Netronome devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Netronome
+Group:		Base/Kernel
 
 %description netronome
 Firmware for Netronome devices.
@@ -153,6 +163,7 @@ Firmware dla urządzeń firmy Netronome.
 %package nvidia
 Summary:	Firmware for NVIDIA devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy NVIDIA
+Group:		Base/Kernel
 
 %description nvidia
 Firmware for NVIDIA devices.
@@ -163,6 +174,7 @@ Firmware dla urządzeń firmy NVIDIA.
 %package nxp
 Summary:	Firmware for NXP devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy NXP
+Group:		Base/Kernel
 
 %description nxp
 Firmware for NXP devices.
@@ -173,6 +185,7 @@ Firmware dla urządzeń firmy NXP.
 %package qlogic
 Summary:	Firmware for QLogic devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy QLogic
+Group:		Base/Kernel
 
 %description qlogic
 Firmware for QLogic devices.
@@ -183,6 +196,7 @@ Firmware dla urządzeń firmy QLogic.
 %package qualcomm
 Summary:	Firmware for Qualcomm devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Qualcomm
+Group:		Base/Kernel
 
 %description qualcomm
 Firmware for Qualcomm devices.
@@ -193,6 +207,7 @@ Firmware dla urządzeń firmy Qualcomm.
 %package realtek
 Summary:	Firmware for Realtek devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Realtek
+Group:		Base/Kernel
 
 %description realtek
 Firmware for Realtek devices.
@@ -203,6 +218,7 @@ Firmware dla urządzeń firmy Realtek.
 %package ti
 Summary:	Firmware for Texas Instruments devices
 Summary(pl.UTF-8):	Firmware dla urządzeń firmy Texas Instruments
+Group:		Base/Kernel
 
 %description ti
 Firmware for Texas Instruments devices.
@@ -216,6 +232,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 10
 Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n iwl100-firmware
 This package contains the firmware required by the Intel wireless
@@ -234,6 +251,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wir
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n iwl105-firmware
 This package contains the firmware required by the Intel wireless
@@ -252,6 +270,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wir
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n iwl135-firmware
 This package contains the firmware required by the Intel wireless
@@ -270,6 +289,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Pro/Wireless
 Version:	39.31.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwl1000-firmware < 1:39.31.5.1-3
 Obsoletes:	iwlwifi-1000-ucode < 1:39.31.5.1-2
 
@@ -290,6 +310,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wir
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n iwl2000-firmware
 This package contains the firmware required by the Intel wireless
@@ -308,6 +329,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii Centrino Wir
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n iwl2030-firmware
 This package contains the firmware required by the Intel wireless
@@ -326,6 +348,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 31
 Version:	25.30.13.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n iwl3160-firmware
 This package contains the firmware required by the Intel wireless
@@ -344,6 +367,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	15.32.2.9
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-3945-ucode < 15.32.2.9-2
 
 %description -n iwl3945-firmware
@@ -362,6 +386,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	228.61.2.24
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-4965-ucode < 228.61.2.24-2
 
 %description -n iwl4965-firmware
@@ -380,6 +405,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	8.83.5.1_1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-5000-ucode < 8.83.5.1-5
 
 %description -n iwl5000-firmware
@@ -399,6 +425,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii PRO/Wireless
 Version:	8.24.2.2
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-5150-ucode < 8.24.2.2-2
 
 %description -n iwl5150-firmware
@@ -418,6 +445,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	9.221.4.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-6000-ucode < 9.221.4.1-2
 
 %description -n iwl6000-firmware
@@ -436,6 +464,7 @@ Summary:	Firmware for Intel(R) Wireless WiFi Link 6005 Series Adapters
 Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 6005
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
+Group:		Base/Kernel
 License:	Redistributable, no modification permitted
 
 %description -n iwl6000g2a-firmware
@@ -455,6 +484,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	18.168.6.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-6030-ucode < 18.168.6.1-2
 
 %description -n iwl6000g2b-firmware
@@ -474,6 +504,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 60
 Version:	41.28.5.1
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-6050-ucode < 41.28.5.1-2
 
 %description -n iwl6050-firmware
@@ -493,6 +524,7 @@ Summary(pl.UTF-8):	Firmware dla kart bezprzewodowych Intela z serii WiFi Link 72
 Version:	25.228.9.0
 Release:	%{ver}.%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	iwlwifi-7260-ucode < 25.228.9.0-8
 Conflicts:	linux-firmware < 20181008-4
 
@@ -513,6 +545,7 @@ Summary(pl.UTF-8):	Firmware dla kart sieciowych Marvell Libertas SD 8686
 Version:	0.%{ver}
 Release:	%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	libertas-sd8686-firmware < 9.70.20.p0-4
 
 %description -n libertas-sd8686-firmware
@@ -527,6 +560,7 @@ Summary(pl.UTF-8):	Firmware dla kart sieciowych Marvell Libertas SD 8787
 Version:	0.%{ver}
 Release:	%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 
 %description -n libertas-sd8787-firmware
 Firmware for Marvell Libertas SD 8787 Network Adapter.
@@ -540,6 +574,7 @@ Summary(pl.UTF-8):	Firmware dla kart sieciowych Marvell Libertas USB 8388
 Version:	0.%{ver}
 Release:	%{rel}
 License:	Redistributable, no modification permitted
+Group:		Base/Kernel
 Obsoletes:	libertas-usb8388-firmware < 2:5.110.22.p23-8
 
 %description -n libertas-usb8388-firmware
@@ -553,6 +588,7 @@ Summary:	OLPC firmware for Marvell Libertas USB 8388 Network Adapter
 Summary(pl.UTF-8):	Firmware OLPC dla kart sieciowych Marvell Libertas USB 8388
 Version:	0.%{ver}
 Release:	%{rel}
+Group:		Base/Kernel
 License:	Redistributable, no modification permitted
 
 %description -n libertas-usb8388-olpc-firmware
@@ -666,7 +702,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/microchip/mscc_vsc8574_revb_int8051_29e8.bin
 /lib/firmware/microchip/mscc_vsc8584_revb_int8051_fb48.bin
 /lib/firmware/moxa
-%dir /lib/firmware/mrvl
 /lib/firmware/mts_*.fw
 /lib/firmware/myri10ge_*.dat
 /lib/firmware/myricom
@@ -805,6 +840,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/lbtf_usb.bin
 /lib/firmware/mwl8k
 /lib/firmware/mwlwifi
+# XXX: shared with libertas
+%dir /lib/firmware/mrvl
 /lib/firmware/mrvl/pcie8897_uapsta.bin
 /lib/firmware/mrvl/pcie8997_wlan_v4.bin
 /lib/firmware/mrvl/pcieuart8997_combo_v4.bin
@@ -829,6 +866,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v2.0.img
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v3.0.img
 /lib/firmware/mrvl/prestera/mvsw_prestera_fw-v4.0.img
+/lib/firmware/mrvl/prestera/mvsw_prestera_fw-v4.1.img
+/lib/firmware/mrvl/prestera/mvsw_prestera_fw_arm64-v4.1.img
 /lib/firmware/libertas/cf8381*.bin
 /lib/firmware/libertas/cf8385*.bin
 /lib/firmware/libertas/gspi8682*.bin
@@ -885,12 +924,14 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7986_wa.bin
 /lib/firmware/mediatek/mt7986_wm.bin
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
+/lib/firmware/mediatek/mt7986_wo_*.bin
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/mediatek/mt8186
 /lib/firmware/mediatek/mt8192
 /lib/firmware/mediatek/mt8195
 /lib/firmware/mediatek/sof
+/lib/firmware/mediatek/sof-tplg
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
@@ -916,6 +957,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc WHENCE LICENSE.nxp_mc_firmware
 /lib/firmware/dpaa2
+/lib/firmware/nxp
 
 %files qlogic
 %defattr(644,root,root,755)
@@ -977,6 +1019,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
 %dir /lib/firmware/rtw89
 /lib/firmware/rtw89/rtw8852a_fw.bin
+/lib/firmware/rtw89/rtw8852b_fw.bin
 /lib/firmware/rtw89/rtw8852c_fw.bin
 
 %files ti
@@ -1091,6 +1134,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libertas-sd8787-firmware
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.Marvell
+# XXX: shared with marvell
 %dir /lib/firmware/mrvl
 /lib/firmware/mrvl/sd8787_uapsta.bin
 
