@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20221214
+%define		ver	20230310
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	b06349f3de9deda29b743cd7bdeb12aa
+# Source0-md5:	822739520cf791a34358a805a37e4a59
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -825,6 +825,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/i915
 /lib/firmware/intel
 /lib/firmware/isci
+/lib/firmware/qat_4xxx.bin
+/lib/firmware/qat_4xxx_mmp.bin
 /lib/firmware/qat_895xcc.bin
 /lib/firmware/qat_895xcc_mmp.bin
 /lib/firmware/qat_c3xxx.bin
