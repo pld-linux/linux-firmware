@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20230310
+%define		ver	20230515
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -14,7 +14,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	822739520cf791a34358a805a37e4a59
+# Source0-md5:	1d772dd254157642842bbc020103d136
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -892,6 +892,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
 /lib/firmware/mediatek/WIFI_RAM_CODE_MT7922_1.bin
 /lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin
+/lib/firmware/mediatek/mt7601u.bin
 /lib/firmware/mediatek/mt7610e.bin
 /lib/firmware/mediatek/mt7610u.bin
 /lib/firmware/mediatek/mt7615_cr4.bin
@@ -900,7 +901,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7622_n9.bin
 /lib/firmware/mediatek/mt7622_rom_patch.bin
 /lib/firmware/mediatek/mt7622pr2h.bin
+/lib/firmware/mediatek/mt7650.bin
 /lib/firmware/mediatek/mt7650e.bin
+/lib/firmware/mediatek/mt7662.bin
+/lib/firmware/mediatek/mt7662_rom_patch.bin
 /lib/firmware/mediatek/mt7662u.bin
 /lib/firmware/mediatek/mt7662u_rom_patch.bin
 /lib/firmware/mediatek/mt7663_n9_rebb.bin
@@ -917,6 +921,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7916_rom_patch.bin
 /lib/firmware/mediatek/mt7916_wa.bin
 /lib/firmware/mediatek/mt7916_wm.bin
+/lib/firmware/mediatek/mt7981_rom_patch.bin
+/lib/firmware/mediatek/mt7981_wa.bin
+/lib/firmware/mediatek/mt7981_wm.bin
+/lib/firmware/mediatek/mt7981_wo.bin
 /lib/firmware/mediatek/mt7986_eeprom_mt7975_dual.bin
 /lib/firmware/mediatek/mt7986_eeprom_mt7976.bin
 /lib/firmware/mediatek/mt7986_eeprom_mt7976_dbdc.bin
@@ -1022,6 +1030,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir /lib/firmware/rtw89
 /lib/firmware/rtw89/rtw8852a_fw.bin
 /lib/firmware/rtw89/rtw8852b_fw.bin
+/lib/firmware/rtw89/rtw8852b_fw-1.bin
 /lib/firmware/rtw89/rtw8852c_fw.bin
 
 %files ti
