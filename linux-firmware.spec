@@ -2,7 +2,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20230625
+%define		ver	20230725
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -11,10 +11,11 @@ Release:	%{rel}
 License:	GPL+ and GPL v2+ and MIT and Redistributable, no modification permitted
 Group:		Base/Kernel
 # in case git snapshot is needed
-#Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{version}.tar.gz
+%define		snap b6ea35ff6b9869470a0c68813f1668acb3d356a8
+Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
+# Source0-md5:	e28779616d9241ee9b19e7be1a0e3c55
 # upstream tarball
-Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	ec09bee1929819108c618d0807541c5f
+#Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -600,7 +601,7 @@ Firmware dla kart sieciowych Marvell Libertas USB 8388 z obsługą
 punktów sieci OLPC.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{snap}
 
 # Remove firmware shipped in separate packages already
 # Perhaps these should be built as subpackages of linux-firmware?
