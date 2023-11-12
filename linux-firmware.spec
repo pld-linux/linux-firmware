@@ -1,8 +1,11 @@
 # TODO
+# - separate new iwlwifi-* subpackages from iwl7260 subpackage or merge:
+#   - all iwl* into single iwlwifi-firmware package
+#   - 1000+2000+5000+6000 into iwlwifi-dvm-firmware, 7000+8000+9000+22000+ax210+bz+sc into iwlwifi-mvm-firmware
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20230919
+%define		ver	20231111
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -15,8 +18,9 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	d99006308bca63a7ddc8fe2e6c057dc3
+# Source0-md5:	17a57377acaab96b0ccfdf85286a08fa
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
+BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Suggests:	%{name}-amd = %{ver}-%{rel}
@@ -654,6 +658,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
+/lib/firmware/amlogic
 /lib/firmware/amphion
 %dir /lib/firmware/ar3k
 /lib/firmware/as102_data1_st.hex
@@ -691,6 +696,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/inside-secure/eip197_minifw/ifpp.bin
 /lib/firmware/inside-secure/eip197_minifw/ipue.bin
 /lib/firmware/isdbt_*.inp
+/lib/firmware/ixp4xx
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
@@ -756,6 +762,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENSE.amdgpu LICENSE.amd-sev LICENSE.amd-ucode LICENSE.radeon
 /lib/firmware/amd
 /lib/firmware/amdgpu
+/lib/firmware/amdtee
 /lib/firmware/amd-ucode
 /lib/firmware/radeon
 
@@ -1126,17 +1133,26 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-7260-*.ucode
 /lib/firmware/iwlwifi-7265-*.ucode
 /lib/firmware/iwlwifi-7265D-*.ucode
+# iwlwifi-8000 subpackage?
 /lib/firmware/iwlwifi-8000C-*.ucode
 /lib/firmware/iwlwifi-8265-*.ucode
+# iwlwifi-9000 subpackage?
 /lib/firmware/iwlwifi-9000-pu-b0-jf-b0-*.ucode
 /lib/firmware/iwlwifi-9260-th-b0-jf-b0-*.ucode
-/lib/firmware/iwlwifi-Qu*.ucode
+# iwlwifi-22000 subpackage?
+/lib/firmware/iwlwifi-Qu-*.ucode
+/lib/firmware/iwlwifi-QuZ-*.ucode
 /lib/firmware/iwlwifi-cc-a0-*.ucode
+# iwlwifi-ax210 subpackage?
+/lib/firmware/iwlwifi-ma-b0-*.ucode
+/lib/firmware/iwlwifi-ma-b0-*.pnvm
 /lib/firmware/iwlwifi-so-a0-*.ucode
-/lib/firmware/iwlwifi-so-a0-gf-a0.pnvm
-/lib/firmware/iwlwifi-so-a0-gf4-a0.pnvm
+/lib/firmware/iwlwifi-so-a0-*.pnvm
 /lib/firmware/iwlwifi-ty-a0-gf-a0-*.ucode
 /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
+# iwlwifi-bz subpackage?
+/lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
+/lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
