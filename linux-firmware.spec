@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20231111
+%define		ver	20231211
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	17a57377acaab96b0ccfdf85286a08fa
+# Source0-md5:	ca7184d96d6e1fb55c0132466963ddba
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
@@ -658,6 +658,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/agere_*_fw.bin
+%dir /lib/firmware/airoha
+/lib/firmware/airoha/EthMD32.DSP.bin
+/lib/firmware/airoha/EthMD32.dm.bin
 /lib/firmware/amlogic
 /lib/firmware/amphion
 %dir /lib/firmware/ar3k
@@ -713,6 +716,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/myri10ge_*.dat
 /lib/firmware/myricom
 /lib/firmware/ositech
+%dir /lib/firmware/powervr
+/lib/firmware/powervr/rogue_33.15.11.3_v1.fw
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
 /lib/firmware/r8a779x_usb3_v2.dlmem
@@ -733,6 +738,7 @@ rm -rf $RPM_BUILD_ROOT
 # links to go7007/s2250*
 /lib/firmware/s2250*.fw
 /lib/firmware/s5p-mfc.fw
+/lib/firmware/s5p-mfc-v12.fw
 /lib/firmware/s5p-mfc-v6.fw
 /lib/firmware/s5p-mfc-v6-v2.fw
 /lib/firmware/s5p-mfc-v7.fw
@@ -943,6 +949,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7986_wm.bin
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt7986_wo_*.bin
+/lib/firmware/mediatek/mt7988
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/mediatek/mt8186
