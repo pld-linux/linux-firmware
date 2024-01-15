@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20231211
+%define		ver	20240115
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	ca7184d96d6e1fb55c0132466963ddba
+# Source0-md5:	cb94e3f55f4ff82a6be4c751f0a80310
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
@@ -675,6 +675,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/cmmb_*_12mhz.inp
 /lib/firmware/cnm
 /lib/firmware/cpia2
+/lib/firmware/cs42l43.bin
 /lib/firmware/ctefx.bin
 /lib/firmware/ctspeq.bin
 /lib/firmware/dabusb
@@ -935,6 +936,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7916_rom_patch.bin
 /lib/firmware/mediatek/mt7916_wa.bin
 /lib/firmware/mediatek/mt7916_wm.bin
+%dir /lib/firmware/mediatek/mt7925
+/lib/firmware/mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin
+/lib/firmware/mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin
+/lib/firmware/mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin
 /lib/firmware/mediatek/mt7981_rom_patch.bin
 /lib/firmware/mediatek/mt7981_wa.bin
 /lib/firmware/mediatek/mt7981_wm.bin
@@ -1023,6 +1028,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ar3k/AthrBT_0x01020201.dfu
 /lib/firmware/ath10k
 /lib/firmware/ath11k
+/lib/firmware/ath12k
 /lib/firmware/ath9k_htc
 /lib/firmware/qca
 /lib/firmware/qcom
@@ -1052,6 +1058,10 @@ rm -rf $RPM_BUILD_ROOT
 %files ti
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.ti-tspa LICENCE.wl1251 LICENCE.ti-connectivity LICENCE.ti-keystone
+/lib/firmware/INT8866RCA2.bin
+/lib/firmware/TAS2XXX*.bin
+/lib/firmware/TIAS2781RCA2.bin
+/lib/firmware/TIAS2781RCA4.bin
 /lib/firmware/ti
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
