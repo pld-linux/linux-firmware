@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20240115
+%define		ver	20240220
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,12 +18,13 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	cb94e3f55f4ff82a6be4c751f0a80310
+# Source0-md5:	cfc57bcc47cde5bb19730d6374b0c20f
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Suggests:	%{name}-amd = %{ver}-%{rel}
+Suggests:	%{name}-arm = %{ver}-%{rel}
 Suggests:	%{name}-atheros = %{ver}-%{rel}
 Suggests:	%{name}-broadcom = %{ver}-%{rel}
 Suggests:	%{name}-cavium = %{ver}-%{rel}
@@ -65,6 +66,17 @@ Firmware for AMD devices.
 
 %description amd -l pl.UTF-8
 Firmware dla urządzeń firmy AMD.
+
+%package arm
+Summary:	Firmware for ARM devices
+Summary(pl.UTF-8):	Firmware dla urządzeń firmy ARM
+Group:		Base/Kernel
+
+%description arm
+Firmware for ARM devices.
+
+%description arm -l pl.UTF-8
+Firmware dla urządzeń firmy ARM.
 
 %package atheros
 Summary:	Firmware for Atheros devices
@@ -752,6 +764,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
 /lib/firmware/tlg2300_firmware.bin
+/lib/firmware/tsse_firmware.bin
 /lib/firmware/ttusb-budget
 /lib/firmware/ueagle-atm
 /lib/firmware/usbdux*_firmware.bin
@@ -772,6 +785,11 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/amdtee
 /lib/firmware/amd-ucode
 /lib/firmware/radeon
+
+%files arm
+%defattr(644,root,root,755)
+%doc WHENCE LICENCE.mali_csffw
+/lib/firmware/arm
 
 %files atheros
 %defattr(644,root,root,755)
@@ -831,7 +849,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files intel
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.e100 LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced
+%doc WHENCE LICENCE.e100 LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced LICENSE.xe
 /lib/firmware/e100
 /lib/firmware/hfi1_dc8051.fw
 /lib/firmware/hfi1_fabric.fw
@@ -850,6 +868,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/qat_c62x_mmp.bin
 # link to qat_895xcc_mmp.bin
 /lib/firmware/qat_mmp.bin
+/lib/firmware/xe
 
 %files marvell
 %defattr(644,root,root,755)
@@ -955,6 +974,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt7986_wo_*.bin
 /lib/firmware/mediatek/mt7988
+/lib/firmware/mediatek/mt7996
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/mediatek/mt8186
@@ -1038,7 +1058,6 @@ rm -rf $RPM_BUILD_ROOT
 %files realtek
 %defattr(644,root,root,755)
 %doc WHENCE README.rtw88 LICENCE.rtlwifi_firmware.txt
-/lib/firmware/RTL8192E
 /lib/firmware/rtl_bt
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
