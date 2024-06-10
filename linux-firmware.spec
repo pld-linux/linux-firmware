@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20240513
+%define		ver	20240610
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	aef98d4a6954382e05e22d7e61c08a14
+# Source0-md5:	b69a23a5f988938926aa37a819ef1002
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
@@ -1062,13 +1062,14 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtl_nic
 /lib/firmware/rtlwifi
 %dir /lib/firmware/rtw88
+/lib/firmware/rtw88/rtw8703b_fw.bin
+/lib/firmware/rtw88/rtw8703b_wow_fw.bin
 /lib/firmware/rtw88/rtw8723d_fw.bin
+/lib/firmware/rtw88/rtw8821a_fw.bin
 /lib/firmware/rtw88/rtw8821c_fw.bin
 /lib/firmware/rtw88/rtw8822b_fw.bin
 /lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
-/lib/firmware/rtw88/rtw8703b_fw.bin
-/lib/firmware/rtw88/rtw8703b_wow_fw.bin
 %dir /lib/firmware/rtw89
 /lib/firmware/rtw89/rtw8851b_fw.bin
 /lib/firmware/rtw89/rtw8852a_fw.bin
