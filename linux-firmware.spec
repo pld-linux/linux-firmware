@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20240709
+%define		ver	20240811
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	5f22bca1385e918ae3fc006c21381af9
+# Source0-md5:	b43aad690794a5d3317c4f460d49c29f
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
@@ -858,6 +858,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/i915
 /lib/firmware/intel
 /lib/firmware/isci
+/lib/firmware/qat_402xx.bin
+/lib/firmware/qat_402xx_mmp.bin
 /lib/firmware/qat_4xxx.bin
 /lib/firmware/qat_4xxx_mmp.bin
 /lib/firmware/qat_895xcc.bin
@@ -1075,7 +1077,9 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw89/rtw8852a_fw.bin
 /lib/firmware/rtw89/rtw8852b_fw.bin
 /lib/firmware/rtw89/rtw8852b_fw-1.bin
+/lib/firmware/rtw89/rtw8852bt_fw.bin
 /lib/firmware/rtw89/rtw8852c_fw.bin
+/lib/firmware/rtw89/rtw8852c_fw-1.bin
 /lib/firmware/rtw89/rtw8922a_fw.bin
 
 %files ti
