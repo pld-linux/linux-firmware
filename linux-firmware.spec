@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20240811
+%define		ver	20240909
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	b43aad690794a5d3317c4f460d49c29f
+# Source0-md5:	0951f2fa4febc89e97312cee54419124
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
@@ -1081,6 +1081,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw89/rtw8852c_fw.bin
 /lib/firmware/rtw89/rtw8852c_fw-1.bin
 /lib/firmware/rtw89/rtw8922a_fw.bin
+/lib/firmware/rtw89/rtw8922a_fw-1.bin
 
 %files ti
 %defattr(644,root,root,755)
@@ -1195,6 +1196,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-ty-a0-gf-a0-*.ucode
 /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
 # iwlwifi-bz subpackage?
+/lib/firmware/iwlwifi-bz-b0-fm-c0-92.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 
