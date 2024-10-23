@@ -1,0 +1,18 @@
+--- linux-firmware-20241017/copy-firmware.sh.orig	2024-10-23 13:41:31.664541337 +0200
++++ linux-firmware-20241017/copy-firmware.sh	2024-10-23 13:51:38.989815246 +0200
+@@ -70,6 +70,7 @@
+ 
+ # shellcheck disable=SC2162 # file/folder name can include escaped symbols
+ grep -E '^(RawFile|File):' WHENCE | sed -E -e 's/^(RawFile|File): */\1 /;s/"//g' | while read k f; do
++    test -e "$f" || continue
+     install -d "$destdir/$(dirname "$f")"
+     $verbose "copying/compressing file $f$compext"
+     if test "$compress" != "cat" && test "$k" = "RawFile"; then
+@@ -82,6 +83,7 @@
+ 
+ # shellcheck disable=SC2162 # file/folder name can include escaped symbols
+ grep -E '^Link:' WHENCE | sed -e 's/^Link: *//g;s/-> //g' | while read l t; do
++    test -e "$(dirname "$l")/$t" || continue
+     directory="$destdir/$(dirname "$l")"
+     install -d "$directory"
+     target="$(cd "$directory" && realpath -m -s "$t")"
