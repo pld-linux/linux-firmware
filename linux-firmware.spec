@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250109
+%define		ver	20250211
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	c2c2139408857c9cdde2e810b80a9e68
+# Source0-md5:	06f676df6660f025601997c418b1a833
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -1096,6 +1096,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw89/rtw8922a_fw.bin
 /lib/firmware/rtw89/rtw8922a_fw-1.bin
 /lib/firmware/rtw89/rtw8922a_fw-2.bin
+/lib/firmware/rtw89/rtw8922a_fw-3.bin
 
 %files ti
 %defattr(644,root,root,755)
@@ -1104,6 +1105,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/TAS2XXX*.bin
 /lib/firmware/TIAS2781RCA2.bin
 /lib/firmware/TIAS2781RCA4.bin
+/lib/firmware/TXNW2781*.bin
 /lib/firmware/ti
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
@@ -1211,10 +1213,13 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
 # iwlwifi-bz subpackage?
 /lib/firmware/iwlwifi-bz-b0-fm-c0-92.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-93.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-94.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-94.ucode
+/lib/firmware/iwlwifi-bz-b0-gf-a0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0.pnvm
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
