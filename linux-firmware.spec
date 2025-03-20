@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250211
+%define		ver	20250311
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	06f676df6660f025601997c418b1a833
+# Source0-md5:	fcc16bf46361b3812f162a9e1818ed99
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -863,6 +863,8 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/isci
 /lib/firmware/qat_402xx.bin
 /lib/firmware/qat_402xx_mmp.bin
+/lib/firmware/qat_420xx.bin
+/lib/firmware/qat_420xx_mmp.bin
 /lib/firmware/qat_4xxx.bin
 /lib/firmware/qat_4xxx_mmp.bin
 /lib/firmware/qat_895xcc.bin
