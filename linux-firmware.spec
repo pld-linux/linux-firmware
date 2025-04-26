@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250311
+%define		ver	20250410
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	fcc16bf46361b3812f162a9e1818ed99
+# Source0-md5:	33857651014102d6f9a269f20536f7fb
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -671,6 +671,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
+/lib/firmware/aeonsemi
 /lib/firmware/agere_*_fw.bin
 %dir /lib/firmware/airoha
 /lib/firmware/airoha/EthMD32.DSP.bin
@@ -990,6 +991,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
 /lib/firmware/mediatek/mt8186
+/lib/firmware/mediatek/mt8188
 /lib/firmware/mediatek/mt8192
 /lib/firmware/mediatek/mt8195
 /lib/firmware/mediatek/sof
@@ -1082,6 +1084,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw88/rtw8703b_wow_fw.bin
 /lib/firmware/rtw88/rtw8723d_fw.bin
 /lib/firmware/rtw88/rtw8812a_fw.bin
+/lib/firmware/rtw88/rtw8814a_fw.bin
 /lib/firmware/rtw88/rtw8821a_fw.bin
 /lib/firmware/rtw88/rtw8821c_fw.bin
 /lib/firmware/rtw88/rtw8822b_fw.bin
@@ -1218,10 +1221,12 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-bz-b0-fm-c0-93.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-94.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-96.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-97.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-94.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-96.ucode
+/lib/firmware/iwlwifi-bz-b0-gf-a0-97.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0.pnvm
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
