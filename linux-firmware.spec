@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250410
+%define		ver	20250509
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	33857651014102d6f9a269f20536f7fb
+# Source0-md5:	1a97469e05c0234e840e8166cae26de7
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -684,6 +684,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/atmel
 /lib/firmware/atusb
 /lib/firmware/av7110
+/lib/firmware/bmi260-init-data.fw
 /lib/firmware/cadence
 /lib/firmware/cirrus
 /lib/firmware/cis
@@ -1098,6 +1099,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw89/rtw8852bt_fw.bin
 /lib/firmware/rtw89/rtw8852c_fw.bin
 /lib/firmware/rtw89/rtw8852c_fw-1.bin
+/lib/firmware/rtw89/rtw8852c_fw-2.bin
 /lib/firmware/rtw89/rtw8922a_fw.bin
 /lib/firmware/rtw89/rtw8922a_fw-1.bin
 /lib/firmware/rtw89/rtw8922a_fw-2.bin
@@ -1222,12 +1224,17 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/iwlwifi-bz-b0-fm-c0-94.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-97.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-98.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-94.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-97.ucode
+/lib/firmware/iwlwifi-bz-b0-gf-a0-98.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0.pnvm
+/lib/firmware/iwlwifi-bz-b0-hr-b0-96.ucode
+/lib/firmware/iwlwifi-bz-b0-hr-b0-98.ucode
+/lib/firmware/iwlwifi-bz-b0-hr-b0.pnvm
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 
