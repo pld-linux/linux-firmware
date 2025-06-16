@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250509
+%define		ver	20250613
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	1a97469e05c0234e840e8166cae26de7
+# Source0-md5:	2c86d7d1e2287deef2175a9c680ff713
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -735,6 +735,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ositech
 %dir /lib/firmware/powervr
 /lib/firmware/powervr/rogue_33.15.11.3_v1.fw
+/lib/firmware/powervr/rogue_36.53.104.796_v1.fw
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
 /lib/firmware/r8a779x_usb3_v2.dlmem
@@ -995,6 +996,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt8188
 /lib/firmware/mediatek/mt8192
 /lib/firmware/mediatek/mt8195
+/lib/firmware/mediatek/mt8196
 /lib/firmware/mediatek/sof
 /lib/firmware/mediatek/sof-tplg
 /lib/firmware/mt7601u.bin
