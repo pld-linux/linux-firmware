@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250627
+%define		ver	20250708
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	e0f5f471fb6941b377a7406a609286a4
+# Source0-md5:	1565828fa05c0e0b68bdde94ea9be810
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -1106,6 +1106,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/rtw89/rtw8922a_fw-1.bin
 /lib/firmware/rtw89/rtw8922a_fw-2.bin
 /lib/firmware/rtw89/rtw8922a_fw-3.bin
+/lib/firmware/rtw89/rtw8922a_fw-4.bin
 
 %files ti
 %defattr(644,root,root,755)
