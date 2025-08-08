@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250708
+%define		ver	20250808
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	1565828fa05c0e0b68bdde94ea9be810
+# Source0-md5:	e908a4b3f2247fe895f4411d0240f780
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -676,6 +676,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir /lib/firmware/airoha
 /lib/firmware/airoha/EthMD32.DSP.bin
 /lib/firmware/airoha/EthMD32.dm.bin
+/lib/firmware/airoha/en7581_npu_data.bin
+/lib/firmware/airoha/en7581_npu_rv32.bin
 /lib/firmware/amlogic
 /lib/firmware/amphion
 %dir /lib/firmware/ar3k
