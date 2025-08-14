@@ -660,8 +660,8 @@ rm -rf $RPM_BUILD_ROOT
 
 ./copy-firmware.sh $RPM_BUILD_ROOT/lib/firmware
 # mhi mhi0: Direct firmware load for ath11k/WCN6855/hw2.1/amss.bin failed with error -2
-ln -sf /lib/firmware/ath11k/WCN6855/hw2.0 \
-       %{buildroot}/lib/firmware/ath11k/WCN6855/hw2.1
+ln -sf hw2.0 $RPM_BUILD_ROOT/lib/firmware/ath11k/WCN6855/hw2.1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
