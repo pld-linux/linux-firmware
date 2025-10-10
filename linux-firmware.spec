@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20250917
+%define		ver	20251011
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	1e9a11b391bc1eccd1572d14f9f20356
+# Source0-md5:	4d383230776770d7f24299ce310f52f5
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	rdfind
@@ -670,9 +670,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc WHENCE LICENCE.* LICENSE.* README.md
 # TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
+%dir /lib/firmware/HP
 %dir /lib/firmware/LENOVO
-%dir /lib/firmware/LENOVO/ish
-/lib/firmware/LENOVO/ish/ish_lnlm_53c4ffad_2a17559f.bin
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
@@ -702,6 +701,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/ctefx.bin
 /lib/firmware/ctspeq.bin
 /lib/firmware/dabusb
+%dir /lib/firmware/dell
 /lib/firmware/dsp56k
 /lib/firmware/dvb-fe-xc4000-*.fw
 /lib/firmware/dvb-fe-xc5000c-*.fw
@@ -862,7 +862,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files intel
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.e100 LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced LICENSE.xe
+%doc WHENCE LICENCE.e100 LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced LICENSE.xe LICENCE.HP LICENSE.dell LICENCE.lenovo
+/lib/firmware/HP/ish
+/lib/firmware/LENOVO/ish
+/lib/firmware/dell/ish
 /lib/firmware/e100
 /lib/firmware/hfi1_dc8051.fw
 /lib/firmware/hfi1_fabric.fw
@@ -994,8 +997,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt7986_wo_*.bin
 /lib/firmware/mediatek/mt7988
-/lib/firmware/mediatek/mt7988_wo_0.bin
-/lib/firmware/mediatek/mt7988_wo_1.bin
 /lib/firmware/mediatek/mt7996
 /lib/firmware/mediatek/mt8173
 /lib/firmware/mediatek/mt8183
