@@ -4,7 +4,7 @@
 #   - 1000+2000+5000+6000 into iwlwifi-dvm-firmware, 7000+8000+9000+22000+ax210+bz+sc into iwlwifi-mvm-firmware
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
-%define		rel	2
+%define		rel	3
 %define		ver	20251011
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
@@ -659,11 +659,16 @@ punktów sieci OLPC.
 rm -rf $RPM_BUILD_ROOT
 
 ./copy-firmware.sh $RPM_BUILD_ROOT/lib/firmware
-# mhi mhi0: Direct firmware load for ath11k/WCN6855/hw2.1/amss.bin failed with error -2
-ln -sf hw2.0 $RPM_BUILD_ROOT/lib/firmware/ath11k/WCN6855/hw2.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%pretrans	qualcomm -p <lua>
+local mode = posix.stat("/lib/firmware/ath11k/WCN6855/hw2.1")
+if mode and mode["type"] == "link" then
+	posix.unlink("/lib/firmware/ath11k/WCN6855/hw2.1")
+end
+
 
 %files
 %defattr(644,root,root,755)

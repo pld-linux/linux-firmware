@@ -12,7 +12,7 @@
  
  # shellcheck disable=SC2162 # file/folder name can include escaped symbols
  grep -E '^Link:' WHENCE | sed -e 's/^Link: *//g;s/-> //g' | while read l t; do
-+    test -e "$(dirname "$l")/$t" || continue
++    test -e "$(realpath -m "$(dirname "$l")/$t")" || continue
      directory="$destdir/$(dirname "$l")"
      install -d "$directory"
      target="$(cd "$directory" && realpath -m -s "$t")"
