@@ -21,6 +21,7 @@ Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar
 # Source0-md5:	4d383230776770d7f24299ce310f52f5
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
+BuildRequires:	parallel
 BuildRequires:	rdfind
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -651,14 +652,15 @@ punktów sieci OLPC.
 # Remove source files we don't need to install
 %{__rm} */*.asm dsp56k/{Makefile,concat-bootstrap.pl} isci/{Makefile,README,*.[ch]}
 %{__rm} -r carl9170fw usbdux
-%{__rm} Makefile
 
 %{__mv} rtw88/README README.rtw88
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./copy-firmware.sh $RPM_BUILD_ROOT/lib/firmware
+%{__make} install \
+	DESTDIR="$RPM_BUILD_ROOT" \
+	FIRMWAREDIR=/lib/firmware
 
 %clean
 rm -rf $RPM_BUILD_ROOT
