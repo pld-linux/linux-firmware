@@ -4,8 +4,8 @@
 #   - 1000+2000+5000+6000 into iwlwifi-dvm-firmware, 7000+8000+9000+22000+ax210+bz+sc into iwlwifi-mvm-firmware
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
-%define		rel	3
-%define		ver	20251011
+%define		rel	1
+%define		ver	20251111
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	4d383230776770d7f24299ce310f52f5
+# Source0-md5:	9ae4bd231d2e5781f84f3fb7126d4717
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -1003,6 +1003,7 @@ end
 /lib/firmware/mediatek/mt7986_wm.bin
 /lib/firmware/mediatek/mt7986_wm_mt7975.bin
 /lib/firmware/mediatek/mt7986_wo_*.bin
+/lib/firmware/mediatek/mt7987
 /lib/firmware/mediatek/mt7988
 /lib/firmware/mediatek/mt7996
 /lib/firmware/mediatek/mt8173
@@ -1115,7 +1116,9 @@ end
 /lib/firmware/rtw89/rtw8852a_fw.bin
 /lib/firmware/rtw89/rtw8852b_fw.bin
 /lib/firmware/rtw89/rtw8852b_fw-1.bin
+/lib/firmware/rtw89/rtw8852b_fw-2.bin
 /lib/firmware/rtw89/rtw8852bt_fw.bin
+/lib/firmware/rtw89/rtw8852bt_fw-1.bin
 /lib/firmware/rtw89/rtw8852c_fw.bin
 /lib/firmware/rtw89/rtw8852c_fw-1.bin
 /lib/firmware/rtw89/rtw8852c_fw-2.bin
@@ -1246,6 +1249,7 @@ end
 /lib/firmware/iwlwifi-bz-b0-fm-c0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-97.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-98.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-101.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-100.ucode
