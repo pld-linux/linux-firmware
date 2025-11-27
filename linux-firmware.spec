@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20251111
+%define		ver	20251125
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	9ae4bd231d2e5781f84f3fb7126d4717
+# Source0-md5:	0025f390a08831ff11c60851699df804
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -775,6 +775,7 @@ end
 /lib/firmware/s5p-mfc-v6-v2.fw
 /lib/firmware/s5p-mfc-v7.fw
 /lib/firmware/s5p-mfc-v8.fw
+/lib/firmware/sdca
 /lib/firmware/sdd_sagrad_*.bin
 /lib/firmware/slicoss
 /lib/firmware/sms1xxx-*.fw
@@ -1265,6 +1266,7 @@ end
 /lib/firmware/iwlwifi-bz-b0-hr-b0.pnvm
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
+/lib/firmware/iwlwifi-sc-a0-wh-b0-101.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
