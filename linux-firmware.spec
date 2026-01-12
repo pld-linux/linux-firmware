@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20251125
+%define		ver	20260110
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	0025f390a08831ff11c60851699df804
+# Source0-md5:	870757a166d20774ab43a0ce6cfa9609
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -687,6 +687,7 @@ end
 %dir /lib/firmware/airoha
 /lib/firmware/airoha/EthMD32.DSP.bin
 /lib/firmware/airoha/EthMD32.dm.bin
+/lib/firmware/airoha/an8811hb
 /lib/firmware/airoha/en7581_npu_data.bin
 /lib/firmware/airoha/en7581_npu_rv32.bin
 /lib/firmware/amlogic
@@ -754,6 +755,7 @@ end
 /lib/firmware/r8a779x_usb3_v1.dlmem
 /lib/firmware/r8a779x_usb3_v2.dlmem
 /lib/firmware/r8a779x_usb3_v3.dlmem
+/lib/firmware/rcar_gen4_pcie.bin
 %dir /lib/firmware/rockchip
 /lib/firmware/rockchip/dptx.bin
 /lib/firmware/rp2.fw
@@ -1251,6 +1253,7 @@ end
 /lib/firmware/iwlwifi-bz-b0-fm-c0-97.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-98.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-101.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-c101.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-100.ucode
@@ -1267,6 +1270,9 @@ end
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 /lib/firmware/iwlwifi-sc-a0-wh-b0-101.ucode
+/lib/firmware/iwlwifi-sc-a0-fm-c0-c101.ucode
+/lib/firmware/iwlwifi-sc-a0-gf-a0-100.ucode
+/lib/firmware/iwlwifi-sc-a0-wh-b0-c101.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
