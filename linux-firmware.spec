@@ -4,7 +4,7 @@
 #   - 1000+2000+5000+6000 into iwlwifi-dvm-firmware, 7000+8000+9000+22000+ax210+bz+sc into iwlwifi-mvm-firmware
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
-%define		rel	1
+%define		rel	2
 %define		ver	20260110
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
@@ -48,6 +48,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		no_install_post_strip	1
 %define		_enable_debug_packages	0
 %define		_noautochrpath		.*/lib/firmware/.*
+%define		_binaries_in_noarch_packages_terminate_build	0
 
 %description
 This package includes firmware files required for some devices to
