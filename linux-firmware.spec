@@ -4,8 +4,8 @@
 #   - 1000+2000+5000+6000 into iwlwifi-dvm-firmware, 7000+8000+9000+22000+ax210+bz+sc into iwlwifi-mvm-firmware
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
-%define		rel	2
-%define		ver	20260110
+%define		rel	1
+%define		ver	20260221
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	870757a166d20774ab43a0ce6cfa9609
+# Source0-md5:	f892f9bc5eff893f119d6bdf30edcbf5
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -688,6 +688,10 @@ end
 %dir /lib/firmware/airoha
 /lib/firmware/airoha/EthMD32.DSP.bin
 /lib/firmware/airoha/EthMD32.dm.bin
+/lib/firmware/airoha/an7583_npu_data.bin
+/lib/firmware/airoha/an7583_npu_rv32.bin
+/lib/firmware/airoha/en7581_MT7996_npu_data.bin
+/lib/firmware/airoha/en7581_MT7996_npu_rv32.bin
 /lib/firmware/airoha/an8811hb
 /lib/firmware/airoha/en7581_npu_data.bin
 /lib/firmware/airoha/en7581_npu_rv32.bin
@@ -1117,7 +1121,9 @@ end
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
 %dir /lib/firmware/rtw89
 /lib/firmware/rtw89/rtw8851b_fw.bin
+/lib/firmware/rtw89/rtw8851b_fw-1.bin
 /lib/firmware/rtw89/rtw8852a_fw.bin
+/lib/firmware/rtw89/rtw8852a_fw-1.bin
 /lib/firmware/rtw89/rtw8852b_fw.bin
 /lib/firmware/rtw89/rtw8852b_fw-1.bin
 /lib/firmware/rtw89/rtw8852b_fw-2.bin
@@ -1135,6 +1141,10 @@ end
 %files ti
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.ti-tspa LICENCE.wl1251 LICENCE.ti-connectivity LICENCE.ti-keystone
+/lib/firmware/8E86-*-*.bin
+/lib/firmware/8E87-*-*.bin
+/lib/firmware/8EF5-*-*.bin
+/lib/firmware/8EF6-*-*.bin
 /lib/firmware/INT8866RCA2.bin
 /lib/firmware/TAS2XXX*.bin
 /lib/firmware/TIAS2781RCA2.bin
@@ -1255,6 +1265,7 @@ end
 /lib/firmware/iwlwifi-bz-b0-fm-c0-98.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-101.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-c101.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-c102.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-100.ucode
@@ -1272,8 +1283,10 @@ end
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 /lib/firmware/iwlwifi-sc-a0-wh-b0-101.ucode
 /lib/firmware/iwlwifi-sc-a0-fm-c0-c101.ucode
+/lib/firmware/iwlwifi-sc-a0-fm-c0-c102.ucode
 /lib/firmware/iwlwifi-sc-a0-gf-a0-100.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-c101.ucode
+/lib/firmware/iwlwifi-sc-a0-wh-b0-c102.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
