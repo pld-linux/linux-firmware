@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20260309
+%define		ver	20260410
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	e002c324bc458d6afaf6374a38fc6317
+# Source0-md5:	d657f6f31adbd92ac0d76e454cea5da0
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -1261,36 +1261,41 @@ end
 /lib/firmware/iwlwifi-ty-a0-gf-a0.pnvm
 # iwlwifi-bz subpackage?
 /lib/firmware/iwlwifi-bz-b0-fm-c0-92.ucode
-/lib/firmware/iwlwifi-bz-b0-fm-c0-100.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-93.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-94.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-97.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-98.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-100.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-101.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-c101.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-c102.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-c103.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
-/lib/firmware/iwlwifi-bz-b0-gf-a0-100.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-94.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-97.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-98.ucode
+/lib/firmware/iwlwifi-bz-b0-gf-a0-100.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0.pnvm
 /lib/firmware/iwlwifi-bz-b0-hr-b0-93.ucode
 /lib/firmware/iwlwifi-bz-b0-hr-b0-96.ucode
 /lib/firmware/iwlwifi-bz-b0-hr-b0-98.ucode
 /lib/firmware/iwlwifi-bz-b0-hr-b0-100.ucode
 /lib/firmware/iwlwifi-bz-b0-hr-b0.pnvm
+/lib/firmware/iwlwifi-bz-b0-wh-b0-c102.ucode
+/lib/firmware/iwlwifi-bz-b0-wh-b0-c103.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
+/lib/firmware/iwlwifi-sc-a0-fm-c0-c103.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-101.ucode
 /lib/firmware/iwlwifi-sc-a0-fm-c0-c101.ucode
 /lib/firmware/iwlwifi-sc-a0-fm-c0-c102.ucode
 /lib/firmware/iwlwifi-sc-a0-gf-a0-100.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-c101.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-c102.ucode
+/lib/firmware/iwlwifi-sc-a0-wh-b0-c103.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
