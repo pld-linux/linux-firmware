@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20260410
+%define		ver	20260519
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	d657f6f31adbd92ac0d76e454cea5da0
+# Source0-md5:	6815e2477a1cec490127252e306f9d1d
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -680,6 +680,7 @@ end
 /lib/firmware/3com
 %dir /lib/firmware/HP
 %dir /lib/firmware/LENOVO
+/lib/firmware/Lontium
 /lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
@@ -1000,6 +1001,9 @@ end
 %dir /lib/firmware/mediatek/mt7925
 /lib/firmware/mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin
 /lib/firmware/mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin
+%dir /lib/firmware/mediatek/mt7927
+/lib/firmware/mediatek/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin
+/lib/firmware/mediatek/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin
 /lib/firmware/mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin
 /lib/firmware/mediatek/mt7981_rom_patch.bin
 /lib/firmware/mediatek/mt7981_wa.bin
@@ -1031,8 +1035,6 @@ end
 /lib/firmware/mt7601u.bin
 /lib/firmware/mt7650.bin
 /lib/firmware/mt7662*.bin
-/lib/firmware/vpu_d.bin
-/lib/firmware/vpu_p.bin
 
 %files mellanox
 %defattr(644,root,root,755)
@@ -1145,10 +1147,39 @@ end
 %files ti
 %defattr(644,root,root,755)
 %doc WHENCE LICENCE.ti-tspa LICENCE.wl1251 LICENCE.ti-connectivity LICENCE.ti-keystone
+/lib/firmware/1534-*-*.bin
+/lib/firmware/16F4-*-*.bin
+/lib/firmware/1714-*-*.bin
+/lib/firmware/1954-*-*.bin
+/lib/firmware/1964-*-*.bin
+/lib/firmware/1994-*-*.bin
+/lib/firmware/1AC4-*-*.bin
+/lib/firmware/1AD4-*-*.bin
+/lib/firmware/1B04-*-*.bin
+/lib/firmware/1B94-*-*.bin
+/lib/firmware/3431-*-*.bin
+/lib/firmware/35C1-*-*.bin
+/lib/firmware/35D1-*-*.bin
+/lib/firmware/35E1-*-*.bin
+/lib/firmware/36A1-*-*.bin
+/lib/firmware/36B1-*-*.bin
 /lib/firmware/8E86-*-*.bin
 /lib/firmware/8E87-*-*.bin
+/lib/firmware/8EA1-*-*.bin
+/lib/firmware/8EA2-*-*.bin
+/lib/firmware/8EA4-*-*.bin
+/lib/firmware/8EA5-*-*.bin
+/lib/firmware/8EA6-*-*.bin
+/lib/firmware/8EA7-*-*.bin
+/lib/firmware/8EA8-*-*.bin
+/lib/firmware/8EB4-*-*.bin
+/lib/firmware/8ED0-*-*.bin
 /lib/firmware/8EF5-*-*.bin
 /lib/firmware/8EF6-*-*.bin
+/lib/firmware/8F6D-*-*.bin
+/lib/firmware/8F7B-*-*.bin
+/lib/firmware/8FA4-*-*.bin
+/lib/firmware/8FA5-*-*.bin
 /lib/firmware/INT8866RCA2.bin
 /lib/firmware/TAS2XXX*.bin
 /lib/firmware/TIAS2781RCA2.bin
