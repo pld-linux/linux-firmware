@@ -5,7 +5,7 @@
 # - subpackages for various firmwares?
 # - (since 5.3) compress firmware: https://git.kernel.org/linus/82fd7a8142a10b8eb41313074b3859d82c0857dc
 %define		rel	1
-%define		ver	20260519
+%define		ver	20260810
 Summary:	Firmware files used by the Linux kernel
 Summary(pl.UTF-8):	Pliki firmware'u używane przez jądro Linuksa
 Name:		linux-firmware
@@ -18,7 +18,7 @@ Group:		Base/Kernel
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/%{name}-%{snap}.tar.gz
 # upstream tarball
 Source0:	https://www.kernel.org/pub/linux/kernel/firmware/%{name}-%{version}.tar.xz
-# Source0-md5:	6815e2477a1cec490127252e306f9d1d
+# Source0-md5:	20b70da34b09001cdd231401b0cca9ae
 Patch0:		check-files.patch
 URL:		https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/
 BuildRequires:	parallel
@@ -626,15 +626,15 @@ punktów sieci OLPC.
 # Remove firmware shipped in separate packages already
 # Perhaps these should be built as subpackages of linux-firmware?
 # - ql{2100,2200,2300,2322,2400,2500}-firmware.spec
-%{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENCE.qla2xxx
+%{__rm} ql{2100,2200,2300,2322,2400,2500}_fw.bin LICENSES/LICENCE.qla2xxx
 # - alsa-firmware.spec
-%{__rm} -r ess korg sb16 yamaha
+%{__rm} -r sb16 yamaha
 # We have _some_ ralink firmware in separate packages already. (which packages???)
 %{__rm} rt73.bin rt2561.bin rt2561s.bin rt2661.bin
 # And _some_ conexant firmware. (which packages???)
 %{__rm} v4l-cx23418-apu.fw v4l-cx23418-cpu.fw v4l-cx23418-dig.fw v4l-cx25840.fw
 # Netxen firmware (which package???)
-%{__rm} phanfw.bin LICENCE.phanfw
+%{__rm} phanfw.bin LICENSES/LICENCE.phanfw
 # - radeon-ucode.spec
 %{__rm} radeon/{ARUBA,BARTS,BONAIRE,BTC,CAICOS,CAYMAN,CEDAR,CYPRESS,HAINAN,HAWAII,JUNIPER,KABINI,KAVERI,MULLINS,OLAND,PALM,PITCAIRN,R700,REDWOOD,SUMO,SUMO2,TAHITI,TURKS,VERDE,bonaire,hainan,hawaii,kabini,kaveri,mullins,oland,pitcairn,tahiti,verde}_*.bin
 # R{100,200,300,420,520}_cp.bin, R600_{me,pfp}.bin, RS{600,690}_cp.bin, RS780_{me,pfp}.bin, RV610_{me,pfp}.bin RV620_{me,pfp}.bin, RV630_{me,pfp}.bin, RV635_{me,pfp}.bin, RV710-{me,pfp}.bin, RV730_{me,pfp}.bin RV770_{me,pfp}.bin are missing in radeon_ucode
@@ -675,13 +675,12 @@ end
 
 %files
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.* LICENSE.* README.md
+%doc WHENCE LICENSES/LICENCE.* LICENSES/LICENSE.* README.md
 # TDA7706_OM_v*_boot.txt
 /lib/firmware/3com
 %dir /lib/firmware/HP
 %dir /lib/firmware/LENOVO
 /lib/firmware/Lontium
-/lib/firmware/acenic
 /lib/firmware/adaptec
 /lib/firmware/advansys
 /lib/firmware/aeonsemi
@@ -727,7 +726,6 @@ end
 /lib/firmware/dvb-usb-terratec-h5-drxk.fw
 /lib/firmware/edgeport
 /lib/firmware/emi26
-/lib/firmware/emi62
 /lib/firmware/ene-ub6250
 /lib/firmware/f2255usb.bin
 /lib/firmware/go7007
@@ -741,7 +739,6 @@ end
 /lib/firmware/kaweth
 /lib/firmware/keyspan
 /lib/firmware/keyspan_pda
-/lib/firmware/lgs8g75.fw
 %dir /lib/firmware/libertas
 /lib/firmware/lt8713sx_fw.bin
 /lib/firmware/lt9611uxc_fw.bin
@@ -750,13 +747,14 @@ end
 %dir /lib/firmware/microchip
 /lib/firmware/microchip/mscc_vsc8574_revb_int8051_29e8.bin
 /lib/firmware/microchip/mscc_vsc8584_revb_int8051_fb48.bin
+/lib/firmware/morsemicro
 /lib/firmware/moxa
 /lib/firmware/mts_*.fw
 /lib/firmware/myri10ge_*.dat
-/lib/firmware/myricom
 /lib/firmware/ositech
 %dir /lib/firmware/powervr
 /lib/firmware/powervr/rogue_33.15.11.3_v1.fw
+/lib/firmware/powervr/rogue_36.52.104.182_v1.fw
 /lib/firmware/powervr/rogue_36.53.104.796_v1.fw
 /lib/firmware/r128
 /lib/firmware/r8a779x_usb3_v1.dlmem
@@ -788,27 +786,23 @@ end
 /lib/firmware/sdd_sagrad_*.bin
 /lib/firmware/slicoss
 /lib/firmware/sms1xxx-*.fw
-/lib/firmware/sun
 /lib/firmware/sxg
 /lib/firmware/tdmb_nova_12mhz.inp
 /lib/firmware/tehuti
 /lib/firmware/tlg2300_firmware.bin
 /lib/firmware/tsse_firmware.bin
-/lib/firmware/ttusb-budget
 /lib/firmware/ueagle-atm
 /lib/firmware/usbdux*_firmware.bin
 /lib/firmware/v4l-cx*.fw
-/lib/firmware/vicam
 /lib/firmware/vntwusb.fw
 /lib/firmware/vxge
 /lib/firmware/wfx
 /lib/firmware/whiteheat*.fw
 /lib/firmware/wsm_22.bin
-/lib/firmware/yam
 
 %files amd
 %defattr(644,root,root,755)
-%doc WHENCE LICENSE.amdgpu LICENSE.amd-sev LICENSE.amd-ucode LICENSE.radeon
+%doc WHENCE LICENSES/{LICENSE.amdgpu,LICENSE.amd-sev,LICENSE.amd-ucode,LICENSE.radeon}
 /lib/firmware/amd
 /lib/firmware/amdgpu
 /lib/firmware/amdnpu
@@ -818,12 +812,12 @@ end
 
 %files arm
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.mali_csffw
+%doc WHENCE LICENSES/LICENCE.mali_csffw
 /lib/firmware/arm
 
 %files atheros
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.atheros_firmware
+%doc WHENCE LICENSES/LICENCE.atheros_firmware
 /lib/firmware/ar3k/1020200
 /lib/firmware/ar3k/1020201
 /lib/firmware/ar3k/30000
@@ -858,7 +852,7 @@ end
 
 %files broadcom
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.broadcom_bcm43xx
+%doc WHENCE LICENSES/LICENCE.broadcom_bcm43xx
 /lib/firmware/bnx2
 /lib/firmware/bnx2x
 /lib/firmware/brcm
@@ -867,19 +861,19 @@ end
 
 %files cavium
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.cavium LICENCE.cavium_liquidio
+%doc WHENCE LICENSES/{LICENSES/LICENCE.cavium,LICENCE.cavium_liquidio}
 /lib/firmware/cavium
 /lib/firmware/liquidio
 
 %files chelsio
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.chelsio_firmware
+%doc WHENCE LICENSES/LICENCE.chelsio_firmware
 /lib/firmware/cxgb3
 /lib/firmware/cxgb4
 
 %files intel
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.e100 LICENSE.ipu3_firmware LICENCE.ibt_firmware LICENCE.qat_firmware LICENCE.fw_sst_0f28 LICENCE.IntcSST2 LICENCE.adsp_sst LICENSE.i915 LICENSE.hfi1_firmware LICENSE.ice LICENSE.ice_enhanced LICENSE.xe LICENCE.HP LICENSE.dell LICENCE.lenovo
+%doc WHENCE LICENSES/{LICENSES/LICENCE.e100,LICENSE.ipu3_firmware,LICENCE.ibt_firmware,LICENCE.qat_firmware,LICENCE.fw_sst_0f28,LICENCE.IntcSST2,LICENCE.adsp_sst,LICENSE.i915,LICENSE.hfi1_firmware,LICENSE.ice,LICENSE.ice_enhanced,LICENSE.xe,LICENCE.HP,LICENSE.dell,LICENCE.lenovo}
 /lib/firmware/HP/ish
 /lib/firmware/LENOVO/ish
 /lib/firmware/dell/ish
@@ -909,7 +903,7 @@ end
 
 %files marvell
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell LICENCE.OLPC
+%doc WHENCE LICENSES/{LICENSES/LICENCE.Marvell,LICENCE.OLPC}
 /lib/firmware/lbtf_usb.bin
 /lib/firmware/mwl8k
 /lib/firmware/mwlwifi
@@ -955,7 +949,7 @@ end
 
 %files mediatek
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.ralink_a_mediatek_company_firmware LICENCE.mediatek
+%doc WHENCE LICENSES/{LICENSES/LICENCE.ralink_a_mediatek_company_firmware,LICENCE.mediatek}
 %dir /lib/firmware/mediatek
 /lib/firmware/mediatek/BT_RAM_CODE_MT7902_1_1_hdr.bin
 /lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin
@@ -1005,6 +999,7 @@ end
 /lib/firmware/mediatek/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin
 /lib/firmware/mediatek/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin
 /lib/firmware/mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin
+/lib/firmware/mediatek/mt7981_eeprom_mt7976_dbdc.bin
 /lib/firmware/mediatek/mt7981_rom_patch.bin
 /lib/firmware/mediatek/mt7981_wa.bin
 /lib/firmware/mediatek/mt7981_wm.bin
@@ -1043,23 +1038,23 @@ end
 
 %files netronome
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.Netronome
+%doc WHENCE LICENSES/LICENCE.Netronome
 /lib/firmware/netronome
 
 %files nvidia
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.nvidia
+%doc WHENCE LICENSES/LICENCE.nvidia
 /lib/firmware/nvidia
 
 %files nxp
 %defattr(644,root,root,755)
-%doc WHENCE LICENSE.nxp_mc_firmware
+%doc WHENCE LICENSES/LICENSE.nxp_mc_firmware
 /lib/firmware/dpaa2
 /lib/firmware/nxp
 
 %files qlogic
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.qla1280
+%doc WHENCE LICENSES/LICENCE.qla1280
 /lib/firmware/cbfw-*.bin
 /lib/firmware/ct2fw-*.bin
 /lib/firmware/ctfw-*.bin
@@ -1084,11 +1079,12 @@ end
 /lib/firmware/qed/qed_init_values_zipped-8.7.3.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.42.2.0.bin
 /lib/firmware/qed/qed_init_values_zipped-8.59.1.0.bin
+/lib/firmware/ql2900_fw.bin
 /lib/firmware/qlogic
 
 %files qualcomm
 %defattr(644,root,root,755)
-%doc WHENCE LICENSE.QualcommAtheros_ar3k LICENSE.QualcommAtheros_ath10k LICENCE.open-ath9k-htc-firmware LICENSE.qcom
+%doc WHENCE LICENSES/{LICENSES/LICENSE.QualcommAtheros_ar3k,LICENSE.QualcommAtheros_ath10k,LICENCE.open-ath9k-htc-firmware,LICENSE.qcom}
 # links to qcom/a300_*.fw
 /lib/firmware/a300_pfp.fw
 /lib/firmware/a300_pm4.fw
@@ -1105,7 +1101,7 @@ end
 
 %files realtek
 %defattr(644,root,root,755)
-%doc WHENCE README.rtw88 LICENCE.rtlwifi_firmware.txt
+%doc WHENCE README.rtw88 LICENSES/LICENCE.rtlwifi_firmware.txt
 %dir /lib/firmware/realtek
 %dir /lib/firmware/realtek/rt1320
 /lib/firmware/realtek/rt1320/rt1320-patch-code-vab.bin
@@ -1117,6 +1113,7 @@ end
 %dir /lib/firmware/rtw88
 /lib/firmware/rtw88/rtw8703b_fw.bin
 /lib/firmware/rtw88/rtw8703b_wow_fw.bin
+/lib/firmware/rtw88/rtw8723b_fw.bin
 /lib/firmware/rtw88/rtw8723d_fw.bin
 /lib/firmware/rtw88/rtw8812a_fw.bin
 /lib/firmware/rtw88/rtw8814a_fw.bin
@@ -1126,6 +1123,8 @@ end
 /lib/firmware/rtw88/rtw8822c_fw.bin
 /lib/firmware/rtw88/rtw8822c_wow_fw.bin
 %dir /lib/firmware/rtw89
+/lib/firmware/rtw89/rtw8922d_fw.bin
+/lib/firmware/rtw89/rtw8922ds_fw.bin
 /lib/firmware/rtw89/rtw8851b_fw.bin
 /lib/firmware/rtw89/rtw8851b_fw-1.bin
 /lib/firmware/rtw89/rtw8852a_fw.bin
@@ -1146,8 +1145,9 @@ end
 
 %files ti
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.ti-tspa LICENCE.wl1251 LICENCE.ti-connectivity LICENCE.ti-keystone
+%doc WHENCE LICENSES/{LICENSES/LICENCE.ti-tspa,LICENCE.wl1251,LICENCE.ti-connectivity,LICENCE.ti-keystone}
 /lib/firmware/1534-*-*.bin
+/lib/firmware/15E2-*-*.bin
 /lib/firmware/16F4-*-*.bin
 /lib/firmware/1714-*-*.bin
 /lib/firmware/1954-*-*.bin
@@ -1157,6 +1157,7 @@ end
 /lib/firmware/1AD4-*-*.bin
 /lib/firmware/1B04-*-*.bin
 /lib/firmware/1B94-*-*.bin
+/lib/firmware/1C64-*-*.bin
 /lib/firmware/3431-*-*.bin
 /lib/firmware/35C1-*-*.bin
 /lib/firmware/35D1-*-*.bin
@@ -1180,11 +1181,22 @@ end
 /lib/firmware/8F7B-*-*.bin
 /lib/firmware/8FA4-*-*.bin
 /lib/firmware/8FA5-*-*.bin
+/lib/firmware/8FF4-*-*.bin
+/lib/firmware/8FF5-*-*.bin
+/lib/firmware/8FF7-*-*.bin
+/lib/firmware/9001-*-*.bin
+/lib/firmware/9013-*-*.bin
+/lib/firmware/9014-*-*.bin
+/lib/firmware/9015-*-*.bin
+/lib/firmware/9026-*-*.bin
+/lib/firmware/9028-*-*.bin
+/lib/firmware/9029-*-*.bin
 /lib/firmware/INT8866RCA2.bin
 /lib/firmware/TAS2XXX*.bin
 /lib/firmware/TIAS2781RCA2.bin
 /lib/firmware/TIAS2781RCA4.bin
 /lib/firmware/TXNW2781*.bin
+/lib/firmware/tas257*.bin
 /lib/firmware/ti
 /lib/firmware/ti_3410.fw
 /lib/firmware/ti_5052.fw
@@ -1193,83 +1205,83 @@ end
 
 %files -n iwl100-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-100-5.ucode
 
 %files -n iwl105-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-105-*.ucode
 
 %files -n iwl135-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-135-*.ucode
 
 %files -n iwl1000-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-1000-*.ucode
 
 %files -n iwl2000-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-2000-*.ucode
 
 %files -n iwl2030-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-2030-*.ucode
 
 %files -n iwl3160-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-3160-*.ucode
 /lib/firmware/iwlwifi-3168-*.ucode
 
 %files -n iwl3945-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-3945-*.ucode
 
 %files -n iwl4965-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-4965-*.ucode
 
 %files -n iwl5000-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-5000-*.ucode
 
 %files -n iwl5150-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-5150-*.ucode
 
 %files -n iwl6000-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6000-*.ucode
 
 %files -n iwl6000g2a-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6000g2a-*.ucode
 
 %files -n iwl6000g2b-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6000g2b-*.ucode
 
 %files -n iwl6050-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-6050-*.ucode
 
 %files -n iwl7260-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.iwlwifi_firmware
+%doc WHENCE LICENSES/LICENCE.iwlwifi_firmware
 /lib/firmware/iwlwifi-7260-*.ucode
 /lib/firmware/iwlwifi-7265-*.ucode
 /lib/firmware/iwlwifi-7265D-*.ucode
@@ -1302,6 +1314,7 @@ end
 /lib/firmware/iwlwifi-bz-b0-fm-c0-c101.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-c102.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0-c103.ucode
+/lib/firmware/iwlwifi-bz-b0-fm-c0-c106.ucode
 /lib/firmware/iwlwifi-bz-b0-fm-c0.pnvm
 /lib/firmware/iwlwifi-bz-b0-gf-a0-92.ucode
 /lib/firmware/iwlwifi-bz-b0-gf-a0-94.ucode
@@ -1317,38 +1330,41 @@ end
 /lib/firmware/iwlwifi-bz-b0-hr-b0.pnvm
 /lib/firmware/iwlwifi-bz-b0-wh-b0-c102.ucode
 /lib/firmware/iwlwifi-bz-b0-wh-b0-c103.ucode
+/lib/firmware/iwlwifi-bz-b0-wh-b0-c106.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0-*.ucode
 /lib/firmware/iwlwifi-gl-c0-fm-c0.pnvm
 /lib/firmware/iwlwifi-sc-a0-fm-c0-c103.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-101.ucode
 /lib/firmware/iwlwifi-sc-a0-fm-c0-c101.ucode
 /lib/firmware/iwlwifi-sc-a0-fm-c0-c102.ucode
+/lib/firmware/iwlwifi-sc-a0-fm-c0-c106.ucode
 /lib/firmware/iwlwifi-sc-a0-gf-a0-100.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-c101.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-c102.ucode
 /lib/firmware/iwlwifi-sc-a0-wh-b0-c103.ucode
+/lib/firmware/iwlwifi-sc-a0-wh-b0-c106.ucode
 
 %files -n libertas-sd8686-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell
+%doc WHENCE LICENSES/LICENCE.Marvell
 %dir /lib/firmware/libertas
 /lib/firmware/libertas/sd8686_v9*.bin
 
 %files -n libertas-sd8787-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell
+%doc WHENCE LICENSES/LICENCE.Marvell
 # XXX: shared with marvell
 %dir /lib/firmware/mrvl
 /lib/firmware/mrvl/sd8787_uapsta.bin
 
 %files -n libertas-usb8388-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell
+%doc WHENCE LICENSES/LICENCE.Marvell
 %dir /lib/firmware/libertas
 /lib/firmware/libertas/usb8388_v9.bin
 
 %files -n libertas-usb8388-olpc-firmware
 %defattr(644,root,root,755)
-%doc WHENCE LICENCE.Marvell
+%doc WHENCE LICENSES/LICENCE.Marvell
 %dir /lib/firmware/libertas
 /lib/firmware/libertas/usb8388_olpc.bin
