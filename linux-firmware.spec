@@ -861,7 +861,7 @@ end
 
 %files cavium
 %defattr(644,root,root,755)
-%doc WHENCE LICENSES/{LICENSES/LICENCE.cavium,LICENCE.cavium_liquidio}
+%doc WHENCE LICENSES/{LICENCE.cavium,LICENCE.cavium_liquidio}
 /lib/firmware/cavium
 /lib/firmware/liquidio
 
@@ -873,7 +873,7 @@ end
 
 %files intel
 %defattr(644,root,root,755)
-%doc WHENCE LICENSES/{LICENSES/LICENCE.e100,LICENSE.ipu3_firmware,LICENCE.ibt_firmware,LICENCE.qat_firmware,LICENCE.fw_sst_0f28,LICENCE.IntcSST2,LICENCE.adsp_sst,LICENSE.i915,LICENSE.hfi1_firmware,LICENSE.ice,LICENSE.ice_enhanced,LICENSE.xe,LICENCE.HP,LICENSE.dell,LICENCE.lenovo}
+%doc WHENCE LICENSES/{LICENCE.e100,LICENSE.ipu3_firmware,LICENCE.ibt_firmware,LICENCE.qat_firmware,LICENCE.fw_sst_0f28,LICENCE.IntcSST2,LICENCE.adsp_sst,LICENSE.i915,LICENSE.hfi1_firmware,LICENSE.ice,LICENSE.ice_enhanced,LICENSE.xe,LICENCE.HP,LICENSE.dell,LICENCE.lenovo}
 /lib/firmware/HP/ish
 /lib/firmware/LENOVO/ish
 /lib/firmware/dell/ish
@@ -903,7 +903,7 @@ end
 
 %files marvell
 %defattr(644,root,root,755)
-%doc WHENCE LICENSES/{LICENSES/LICENCE.Marvell,LICENCE.OLPC}
+%doc WHENCE LICENSES/{LICENCE.Marvell,LICENCE.OLPC}
 /lib/firmware/lbtf_usb.bin
 /lib/firmware/mwl8k
 /lib/firmware/mwlwifi
@@ -949,7 +949,7 @@ end
 
 %files mediatek
 %defattr(644,root,root,755)
-%doc WHENCE LICENSES/{LICENSES/LICENCE.ralink_a_mediatek_company_firmware,LICENCE.mediatek}
+%doc WHENCE LICENSES/{LICENCE.ralink_a_mediatek_company_firmware,LICENCE.mediatek}
 %dir /lib/firmware/mediatek
 /lib/firmware/mediatek/BT_RAM_CODE_MT7902_1_1_hdr.bin
 /lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin
@@ -1084,7 +1084,7 @@ end
 
 %files qualcomm
 %defattr(644,root,root,755)
-%doc WHENCE LICENSES/{LICENSES/LICENSE.QualcommAtheros_ar3k,LICENSE.QualcommAtheros_ath10k,LICENCE.open-ath9k-htc-firmware,LICENSE.qcom}
+%doc WHENCE LICENSES/{LICENSE.QualcommAtheros_ar3k,LICENSE.QualcommAtheros_ath10k,LICENCE.open-ath9k-htc-firmware,LICENSE.qcom}
 # links to qcom/a300_*.fw
 /lib/firmware/a300_pfp.fw
 /lib/firmware/a300_pm4.fw
@@ -1145,7 +1145,7 @@ end
 
 %files ti
 %defattr(644,root,root,755)
-%doc WHENCE LICENSES/{LICENSES/LICENCE.ti-tspa,LICENCE.wl1251,LICENCE.ti-connectivity,LICENCE.ti-keystone}
+%doc WHENCE LICENSES/{LICENCE.ti-tspa,LICENCE.wl1251,LICENCE.ti-connectivity,LICENCE.ti-keystone}
 /lib/firmware/1534-*-*.bin
 /lib/firmware/15E2-*-*.bin
 /lib/firmware/16F4-*-*.bin
